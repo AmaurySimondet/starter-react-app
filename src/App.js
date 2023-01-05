@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import { React } from "react";
+
+import Accueil from "./pages/Accueil";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+// import eruda from "eruda";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+    // //console
+    // let el = document.createElement('div');
+    // document.body.appendChild(el);
+
+    // eruda.init({
+    //     container: el,
+    //     tool: ['console', 'elements']
+    // });
+
+    return (
+        <BrowserRouter>
+            <Routes>
+                <Route path="/" element={<Accueil />}>
+                    {/* <Route path="blogs" element={<Blogs />} /> */}
+                </Route>
+            </Routes>
+        </BrowserRouter>
+    );
 }
 
 export default App;
