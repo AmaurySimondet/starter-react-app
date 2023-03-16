@@ -1,3 +1,32 @@
+body {
+    color: white;
+}
+
 .dactyl {
     font-family: cursive;
+}
+
+.bacic-page {
+    width: 90%;
+    margin: auto;
+    text-align: center;
+}
+
+.logo-navbar {
+    width: 40px;
+}
+
+.background-image {
+    position: absolute;
+    z-index: -1;
+}
+
+.basic-flex {
+    display: flex;
+    column-gap: 5%;
+}
+
+.navigbar-link {
+    color: white;
+    padding: 5%;
 }
