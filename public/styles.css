@@ -14,6 +14,10 @@ h2 {
     font-size: 3vw;
 }
 
+h3 {
+    font-size: 2vw;
+}
+
 p,
 a {
     font-size: 1vw;
@@ -23,10 +27,9 @@ a {
     font-family: cursive;
 }
 
-.bacic-page {
-    width: 90%;
-    margin: auto;
-    text-align: center;
+
+.nav-item {
+    flex-grow: 1;
 }
 
 .branche {
@@ -69,11 +72,18 @@ a {
     align-items: center;
     cursor: pointer;
     transition: all 0.3s ease-in-out;
+    border: 1px solid black;
 }
 
 
 
 /* BASIC */
+
+.basic-page {
+    margin: auto;
+    text-align: center;
+}
+
 
 .opacity-transition {
     transition: all 0.3s ease-in-out;
@@ -95,9 +105,46 @@ a {
     margin-top: 10%;
 }
 
+.basic-margin-top {
+    margin-top: 5%;
+}
+
+.large-padding-top {
+    padding-top: 10%;
+}
+
+.basic-padding-top {
+    padding-top: 5%;
+}
+
+.basic-padding-updown {
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+
+.flex-50-50 {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.flexed-50-50 {
+    width: 50%;
+    flex-grow: 1;
+}
+
+.white-page {
+    background-color: white;
+    color: black;
+}
+
 .large-margin-updown {
     margin-top: 10%;
     margin-bottom: 10%;
+}
+
+.large-padding-updown {
+    padding-top: 10%;
+    padding-bottom: 10%;
 }
 
 .big-title {

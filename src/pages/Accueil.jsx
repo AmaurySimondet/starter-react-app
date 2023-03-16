@@ -1,11 +1,13 @@
 import { React, useState, useEffect } from 'react';
 import { scrollToTop, updateCountdown } from '../utils/layout';
-import { buttonGoTop } from '../elements/general';
+import { buttonGoTop, navbar, titles } from '../elements/general';
+import { colorGreen, colorOrange, colorLightOrange } from '../config.js';
 
 function Accueil() {
     const [showButton, setShowButton] = useState(false);
     const [timeRemaining, setTimeRemaining] = useState('');
 
+    // scroll to top
     useEffect(() => {
         window.addEventListener("scroll", () => {
             if (window.pageYOffset > 300) {
@@ -16,80 +18,58 @@ function Accueil() {
         });
     }, []);
 
+
+    // countdown
     useEffect(() => {
-        // Update the countdown every second and store the interval ID
         const countdownInterval = setInterval(() => {
             setTimeRemaining(updateCountdown());
         }, 1000);
-
-        // Return a cleanup function that clears the interval when the component unmounts
         return () => clearInterval(countdownInterval);
     }, []);
-
 
     return (
         <div>
             <img className="background-image" src={require('../images/images/background-image.png')} />
 
-            <nav className="navbar navbar-expand navbar-light inscription-navbar">
-                <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-                    <span className="navbar-toggler-icon"></span>
-                </button>
+            {navbar()}
 
-                <img className="logo-navbar" alt="logo" src={require('../images/icons/logo.png')} />
-
-                <div className="collapse navbar-collapse" id="navbarTogglerDemo01">
-
-                    <ul className="navbar-nav mr-auto mt-2 mt-lg-0 navbar-elements basic-flex">
-                        <li className="nav-item active">
-                            <a className="navigbar-link text-navbar" href="/connexion">PROGRAMME</a>
-                        </li>
-                        <li className="nav-item active">
-                            <a className="navigbar-link text-navbar" href="/cgu">ACCÈS</a>
-                        </li>
-                        <li className="nav-item active">
-                            <a className="navigbar-link text-navbar" href="/cgu">HÔTEL</a>
-                        </li>
-                        <li className="nav-item active">
-                            <a className="navigbar-link text-navbar" href="/cgu">RSVP</a>
-                        </li>
-                        <li className="nav-item active">
-                            <a className="navigbar-link text-navbar" href="/cgu">DRESS-CODE</a>
-                        </li>
-                        <li className="nav-item active">
-                            <a className="navigbar-link text-navbar" href="/cgu">INFO PRATIQUES</a>
-                        </li>
-                        <li className="nav-item active">
-                            <a className="navigbar-link text-navbar" href="/cgu">PHOTOS</a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
+            {titles(timeRemaining)}
 
 
-            <div className='bacic-page'>
-
-                <div id="titles" className='large-margin-updown'>
+            <div id="programme" className="basic-page">
+                <div className='basic-padding-updown' style={{ marginTop: '35%', backgroundColor: "#7f8aa3" }}>
+                    <h1 className='dactyl'>Programme</h1>
                     <img src={require('../images/images/branche.png')} className='branche' />
+                </div>
 
+                <div className='basic-margin-top white-page'>
                     <div>
-                        <h2>Le mariage de</h2>
-                        <h1 className='dactyl'>Floriane et Antoine</h1>
+                        <h2 style={{ color: colorGreen }}>RENDEZ-VOUS LE</h2>
+                        <h1 style={{ color: colorOrange }} className='dactyl'>Samedi</h1>
+                        <h2>8 JUIN 2024</h2>
+                        <p style={{ color: colorLightOrange }} >Les horaires peuvent être soumis à modifications</p>
                     </div>
 
-                    <img src={require('../images/images/branche.png')} className='branche' />
+                    <div className='basic-margin-top'>
+                        <div className='flex-50-50'>
+                            <div className='flexed-50-50'>
+                                <h2 style={{ color: colorGreen }} className="dactyl">15h30</h2>
+                                <h3>Pot d'accueil</h3>
+                            </div>
+                            <div className='flexed-50-50'>
+                                <img className="branche" src={require('../images/images/accueil.png')} />
+                            </div>
+                        </div>
+
+
+                    </div>
+
                 </div>
 
-                <div>
-                    <h2>Compte à rebours</h2>
-                    <h2>{timeRemaining}</h2>
-                </div>
+
+                {buttonGoTop(scrollToTop, showButton)}
+
             </div>
-
-
-
-            {buttonGoTop(scrollToTop, showButton)}
-
         </div>
     );
 }
