@@ -2,6 +2,23 @@ body {
     color: white;
 }
 
+li {
+    display: inline-block;
+}
+
+h1 {
+    font-size: 5vw;
+}
+
+h2 {
+    font-size: 3vw;
+}
+
+p,
+a {
+    font-size: 1vw;
+}
+
 .dactyl {
     font-family: cursive;
 }
@@ -12,18 +29,20 @@ body {
     text-align: center;
 }
 
+.branche {
+    width: 20%;
+}
+
 .logo-navbar {
-    width: 40px;
+    width: 10%;
+    margin-right: 5%;
+    margin-top: 2%;
 }
 
 .background-image {
     position: absolute;
     z-index: -1;
-}
-
-.basic-flex {
-    display: flex;
-    column-gap: 5%;
+    width: 100%;
 }
 
 .navigbar-link {
@@ -52,6 +71,10 @@ body {
     transition: all 0.3s ease-in-out;
 }
 
+
+
+/* BASIC */
+
 .opacity-transition {
     transition: all 0.3s ease-in-out;
 }
@@ -62,4 +85,28 @@ body {
 
 .not-hidden {
     opacity: 1;
+}
+
+.large-margin-bottom {
+    margin-bottom: 10%;
+}
+
+.large-margin-top {
+    margin-top: 10%;
+}
+
+.large-margin-updown {
+    margin-top: 10%;
+    margin-bottom: 10%;
+}
+
+.big-title {
+    font-size: 3000%;
+}
+
+.basic-flex {
+    display: flex;
+    column-gap: 5%;
+    white-space: nowrap;
+    width: 100%;
 }

@@ -1,9 +1,10 @@
 import { React, useState, useEffect } from 'react';
-import { scrollToTop } from '../utils/layout';
+import { scrollToTop, updateCountdown } from '../utils/layout';
 import { buttonGoTop } from '../elements/general';
 
 function Accueil() {
     const [showButton, setShowButton] = useState(false);
+    const [timeRemaining, setTimeRemaining] = useState('');
 
     useEffect(() => {
         window.addEventListener("scroll", () => {
@@ -15,18 +16,27 @@ function Accueil() {
         });
     }, []);
 
+    useEffect(() => {
+        // Update the countdown every second and store the interval ID
+        const countdownInterval = setInterval(() => {
+            setTimeRemaining(updateCountdown());
+        }, 1000);
+
+        // Return a cleanup function that clears the interval when the component unmounts
+        return () => clearInterval(countdownInterval);
+    }, []);
+
 
     return (
         <div>
-            <img className="background-image" src={require('../images/background-image.png')} />
+            <img className="background-image" src={require('../images/images/background-image.png')} />
 
             <nav className="navbar navbar-expand navbar-light inscription-navbar">
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
-                <a className="navbar-brand" href="/inscription">
-                    <img className="logo-navbar" alt="logo" src={require('../images/icons/logo.png')} />
-                </a>
+
+                <img className="logo-navbar" alt="logo" src={require('../images/icons/logo.png')} />
 
                 <div className="collapse navbar-collapse" id="navbarTogglerDemo01">
 
@@ -35,10 +45,10 @@ function Accueil() {
                             <a className="navigbar-link text-navbar" href="/connexion">PROGRAMME</a>
                         </li>
                         <li className="nav-item active">
-                            <a className="navigbar-link text-navbar" href="/cgu">ACCES</a>
+                            <a className="navigbar-link text-navbar" href="/cgu">ACCÈS</a>
                         </li>
                         <li className="nav-item active">
-                            <a className="navigbar-link text-navbar" href="/cgu">HOTEL</a>
+                            <a className="navigbar-link text-navbar" href="/cgu">HÔTEL</a>
                         </li>
                         <li className="nav-item active">
                             <a className="navigbar-link text-navbar" href="/cgu">RSVP</a>
@@ -59,11 +69,24 @@ function Accueil() {
 
             <div className='bacic-page'>
 
-                <div id="titles">
-                    <h1>Le mariage de</h1>
-                    <h1 className='dactyl'>Floriane et Antoine</h1>
+                <div id="titles" className='large-margin-updown'>
+                    <img src={require('../images/images/branche.png')} className='branche' />
+
+                    <div>
+                        <h2>Le mariage de</h2>
+                        <h1 className='dactyl'>Floriane et Antoine</h1>
+                    </div>
+
+                    <img src={require('../images/images/branche.png')} className='branche' />
+                </div>
+
+                <div>
+                    <h2>Compte à rebours</h2>
+                    <h2>{timeRemaining}</h2>
                 </div>
             </div>
+
+
 
             {buttonGoTop(scrollToTop, showButton)}
 
