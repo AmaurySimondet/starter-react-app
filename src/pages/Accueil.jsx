@@ -1,6 +1,20 @@
 import { React, useState, useEffect } from 'react';
+import { scrollToTop } from '../utils/layout';
+import { buttonGoTop } from '../elements/general';
 
 function Accueil() {
+    const [showButton, setShowButton] = useState(false);
+
+    useEffect(() => {
+        window.addEventListener("scroll", () => {
+            if (window.pageYOffset > 300) {
+                setShowButton(true);
+            } else {
+                setShowButton(false);
+            }
+        });
+    }, []);
+
 
     return (
         <div>
@@ -50,6 +64,8 @@ function Accueil() {
                     <h1 className='dactyl'>Floriane et Antoine</h1>
                 </div>
             </div>
+
+            {buttonGoTop(scrollToTop, showButton)}
 
         </div>
     );

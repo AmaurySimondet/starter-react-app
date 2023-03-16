@@ -30,3 +30,36 @@ body {
     color: white;
     padding: 5%;
 }
+
+.navigbar-link:hover {
+    color: #cccccc;
+}
+
+.btn-to-top {
+    position: fixed;
+    bottom: 60px;
+    right: 20px;
+    z-index: 100;
+    background-color: white;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.opacity-transition {
+    transition: all 0.3s ease-in-out;
+}
+
+.hidden {
+    opacity: 0;
+}
+
+.not-hidden {
+    opacity: 1;
+}
