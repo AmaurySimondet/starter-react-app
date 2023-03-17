@@ -6,23 +6,6 @@ li {
     display: inline-block;
 }
 
-h1 {
-    font-size: 5vw;
-}
-
-h2 {
-    font-size: 3vw;
-}
-
-h3 {
-    font-size: 2vw;
-}
-
-p,
-a {
-    font-size: 1vw;
-}
-
 .dactyl {
     font-family: cursive;
 }
@@ -39,7 +22,6 @@ a {
 .logo-navbar {
     width: 10%;
     margin-right: 5%;
-    margin-top: 2%;
 }
 
 .background-image {
@@ -65,14 +47,23 @@ a {
     background-color: white;
     border: none;
     border-radius: 50%;
-    width: 50px;
-    height: 50px;
+    width: 75px;
+    height: 75px;
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
     transition: all 0.3s ease-in-out;
     border: 1px solid black;
+}
+
+.basic-page.section-header {
+    margin-top: 35%;
+    background-color: #7f8aa3;
+}
+
+.event-image {
+    width: 50%;
 }
 
 
@@ -109,6 +100,10 @@ a {
     margin-top: 5%;
 }
 
+.basic-margin-bottom {
+    margin-bottom: 5%;
+}
+
 .large-padding-top {
     padding-top: 10%;
 }
@@ -117,14 +112,19 @@ a {
     padding-top: 5%;
 }
 
-.basic-padding-updown {
-    padding-top: 5%;
+.basic-padding-bottom {
     padding-bottom: 5%;
+}
+
+.basic-padding-updown {
+    padding-top: 3%;
+    padding-bottom: 3%;
 }
 
 .flex-50-50 {
     display: flex;
     flex-wrap: wrap;
+    align-items: center;
 }
 
 .flexed-50-50 {
@@ -135,6 +135,12 @@ a {
 .white-page {
     background-color: white;
     color: black;
+    margin: auto;
+    width: 80%;
+}
+
+.smallest-padding-bottom {
+    padding-bottom: 1%;
 }
 
 .large-margin-updown {
@@ -153,7 +159,56 @@ a {
 
 .basic-flex {
     display: flex;
-    column-gap: 5%;
+    column-gap: 2%;
     white-space: nowrap;
     width: 100%;
+    align-items: center;
+}
+
+
+
+
+/* LARGE SCREEN */
+@media screen and (min-width: 800px) {
+    h1 {
+        font-size: 5.5vw;
+    }
+
+    h2 {
+        font-size: 4vw;
+    }
+
+    h3 {
+        font-size: 2vw;
+    }
+
+    p,
+    a {
+        font-size: 1.5vw;
+    }
+}
+
+/* SMALL SCREEN */
+@media screen and (max-width: 800px) {
+    h1 {
+        font-size: 9vw;
+    }
+
+    h2 {
+        font-size: 6vw;
+    }
+
+    h3 {
+        font-size: 3.5vw;
+    }
+
+    p,
+    a {
+        font-size: 2.5vw;
+    }
+
+    .basic-page.section-header {
+        margin-top: 20%;
+    }
+
 }

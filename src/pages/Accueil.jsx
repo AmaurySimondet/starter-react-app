@@ -1,6 +1,7 @@
 import { React, useState, useEffect } from 'react';
 import { scrollToTop, updateCountdown } from '../utils/layout';
-import { buttonGoTop, navbar, titles } from '../elements/general';
+import { buttonGoTop, navbar, div5050 } from '../elements/general';
+import { titles, programme } from '../elements/sections';
 import { colorGreen, colorOrange, colorLightOrange } from '../config.js';
 
 function Accueil() {
@@ -35,41 +36,30 @@ function Accueil() {
 
             {titles(timeRemaining)}
 
+            {programme()}
 
-            <div id="programme" className="basic-page">
-                <div className='basic-padding-updown' style={{ marginTop: '35%', backgroundColor: "#7f8aa3" }}>
-                    <h1 className='dactyl'>Programme</h1>
+            <div id="acces" className="basic-page section-header smallest-padding-bottom" style={{ marginTop: "0" }}>
+                <div className='basic-padding-updown'>
+                    <h1 className='dactyl'>Accès</h1>
                     <img src={require('../images/images/branche.png')} className='branche' />
                 </div>
 
-                <div className='basic-margin-top white-page'>
-                    <div>
-                        <h2 style={{ color: colorGreen }}>RENDEZ-VOUS LE</h2>
-                        <h1 style={{ color: colorOrange }} className='dactyl'>Samedi</h1>
-                        <h2>8 JUIN 2024</h2>
-                        <p style={{ color: colorLightOrange }} >Les horaires peuvent être soumis à modifications</p>
+                <div className='white-page'>
+                    <div className='basic-padding-top'>
+                        <h2 style={{ color: colorGreen }}>RENDEZ-VOUS AU</h2>
+                        <h1 style={{ color: colorOrange }} className='dactyl'>Château du Bourg</h1>
+                        <h3>1552 chemin du Bourg</h3>
+                        <h3>42120 Perreux</h3>
                     </div>
 
-                    <div className='basic-margin-top'>
-                        <div className='flex-50-50'>
-                            <div className='flexed-50-50'>
-                                <h2 style={{ color: colorGreen }} className="dactyl">15h30</h2>
-                                <h3>Pot d'accueil</h3>
-                            </div>
-                            <div className='flexed-50-50'>
-                                <img className="branche" src={require('../images/images/accueil.png')} />
-                            </div>
-                        </div>
 
-
-                    </div>
 
                 </div>
 
-
-                {buttonGoTop(scrollToTop, showButton)}
-
             </div>
+
+
+            {buttonGoTop(scrollToTop, showButton)}
         </div>
     );
 }

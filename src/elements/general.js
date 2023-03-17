@@ -1,4 +1,5 @@
 import { scrollTo } from '../utils/layout';
+import { colorGreen } from '../config';
 
 {/* BOUTON GO TO TOP */ }
 function buttonGoTop(scrollToTop, showButton) {
@@ -26,16 +27,16 @@ function navbar() {
                         <p className="navigbar-link text-navbar" onClick={scrollTo("programme")}>PROGRAMME</p>
                     </li>
                     <li className="nav-item active">
-                        <p className="navigbar-link text-navbar" onClick={scrollTo("accès")}>ACCÈS</p>
+                        <p className="navigbar-link text-navbar" onClick={scrollTo("acces")}>ACCÈS</p>
                     </li>
                     <li className="nav-item active">
-                        <p className="navigbar-link text-navbar" onClick={scrollTo("hôtel")}>HÔTEL</p>
+                        <p className="navigbar-link text-navbar" onClick={scrollTo("hotel")}>HÔTEL</p>
                     </li>
                     <li className="nav-item active">
                         <p className="navigbar-link text-navbar" onClick={scrollTo("rsvp")}>RSVP</p>
                     </li>
                     <li className="nav-item active">
-                        <p className="navigbar-link text-navbar" onClick={scrollTo("DRESS-CODE")}>DRESS-CODE</p>
+                        <p className="navigbar-link text-navbar" onClick={scrollTo("dress-code")}>DRESS-CODE</p>
                     </li>
                     <li className="nav-item active">
                         <p className="navigbar-link text-navbar" onClick={scrollTo("info-pratiques")}>INFO PRATIQUES</p>
@@ -49,28 +50,32 @@ function navbar() {
     )
 }
 
-
-function titles(timeRemaining) {
-    return (
-        <div id="titles" className='basic-page'>
-
-            <div className='large-margin-updown'>
-                <img src={require('../images/images/branche.png')} className='branche' />
-
-                <div>
-                    <h2>Le mariage de</h2>
-                    <h1 className='dactyl'>Floriane et Antoine</h1>
+function div5050(hour, event, imageUrl, naturalOrder, imageStyle) {
+    if (naturalOrder) {
+        return (
+            <div className='flex-50-50 basic-padding-bottom'>
+                <div className='flexed-50-50'>
+                    <h2 style={{ color: colorGreen }} className="dactyl">{hour}</h2>
+                    <h3>{event}</h3>
                 </div>
-
-                <img src={require('../images/images/branche.png')} className='branche' />
+                <div className='flexed-50-50'>
+                    <img className="event-image" style={imageStyle} src={require('../images/images/' + imageUrl)} />
+                </div>
             </div>
-
-            <div>
-                <h2>Compte à rebours</h2>
-                <h2>{timeRemaining}</h2>
+        )
+    } else {
+        return (
+            <div className='flex-50-50 basic-padding-bottom'>
+                <div className='flexed-50-50'>
+                    <img className="event-image" style={imageStyle} src={require('../images/images/' + imageUrl)} />
+                </div>
+                <div className='flexed-50-50'>
+                    <h2 style={{ color: colorGreen }} className="dactyl">{hour}</h2>
+                    <h3>{event}</h3>
+                </div>
             </div>
-        </div>
-    )
+        )
+    }
 }
 
-export { buttonGoTop, navbar, titles };
+export { buttonGoTop, navbar, div5050 };
