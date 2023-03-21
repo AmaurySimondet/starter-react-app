@@ -1,7 +1,7 @@
 import { React, useState, useEffect } from 'react';
 import { scrollToTop, updateCountdown } from '../utils/layout';
 import { buttonGoTop, navbar } from '../elements/general';
-import { titles, programme } from '../elements/sections';
+import { titles, programme, mdpSection } from '../elements/sections';
 import { colorGreen, colorOrange } from '../config.js';
 
 function Accueil() {
@@ -54,8 +54,9 @@ function Accueil() {
         return () => { }
     }
 
-    function onToggleClick(setToggleClicked) {
-        return () => setToggleClicked(!toggleClicked);
+    function onToggleClick() {
+        console.log("toggle clicked", toggleClicked)
+        setToggleClicked(!toggleClicked);
     }
 
     function verifyMdp() {
@@ -67,27 +68,14 @@ function Accueil() {
     return (
         <div>
             {mdpOk === false ?
-                <div id="mdp">
-                    <div className="basic-page section-header smallest-padding-bottom" style={{ margin: "auto", minHeight: "100vh", display: "flex", alignItems: "center", justifyContent: "center" }}>
-                        <div style={{ textAlign: "center", alignSelf: "center" }}>
-                            <img src={require('../images/images/branche.png')} className='branche' />
-
-                            <h1> Mot de passe </h1>
-                            <input type="password" id="mdp" name="mdp" onChange={(e) => setMdp(e.target.value)} className="form-control" style={{ width: "200px", margin: "auto" }} />
-                            <button onClick={verifyMdp} className="btn btn-light" style={{ marginTop: "10px" }}>
-                                Valider
-                            </button>
-                            <br />
-
-                            <img src={require('../images/images/branche.png')} className='branche inverted' />
-                        </div>
-                    </div>
+                <div>
+                    {mdpSection(verifyMdp, mdp, setMdp)}
                 </div>
                 :
                 <div>
                     <img className="background-image" src={require('../images/images/background-image.png')} />
 
-                    {navbar(toggleClicked, dimensions.width, onNavbarClick, onToggleClick(setToggleClicked))}
+                    {navbar(toggleClicked, dimensions.width, onNavbarClick, onToggleClick)}
 
                     {titles(timeRemaining)}
 

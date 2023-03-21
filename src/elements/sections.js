@@ -55,4 +55,25 @@ function programme() {
     )
 }
 
-export { titles, programme }
+function mdpSection(verifyMdp, mdp, setMdp) {
+    return (
+        <div id="mdp">
+            <div className="basic-page section-header smallest-padding-bottom" style={{ margin: "auto", minHeight: "100vh", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                <div style={{ textAlign: "center", alignSelf: "center" }}>
+                    <img src={require('../images/images/branche.png')} className='branche' />
+
+                    <h1> Mot de passe </h1>
+                    <input type="password" id="mdp" name="mdp" onChange={(e) => setMdp(e.target.value)} className="form-control" style={{ width: "200px", margin: "auto" }} />
+                    <button onClick={verifyMdp} className="btn btn-light" style={{ marginTop: "10px" }}>
+                        Valider
+                    </button>
+                    <br />
+
+                    <img src={require('../images/images/branche.png')} className='branche inverted' />
+                </div>
+            </div>
+        </div>
+    )
+}
+
+export { titles, programme, mdpSection };

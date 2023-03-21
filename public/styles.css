@@ -20,8 +20,12 @@ li {
 }
 
 .logo-navbar {
-    width: 13%;
+    width: 15%;
     margin-right: 5%;
+}
+
+.logo-navbar:hover {
+    transform: scale(1.1);
 }
 
 .background-image {
@@ -71,13 +75,11 @@ li {
     position: absolute;
     top: 7px;
     right: 20px;
-    transform: rotate(-4deg);
 }
 
 .toggle-navbar:hover {
-    transform: rotate(45deg);
+    scale: 1.1;
 }
-
 
 /* BASIC */
 
@@ -156,6 +158,14 @@ li {
 
 .inverted {
     transform: rotate(180deg);
+}
+
+.rotated {
+    transform: rotate(-184deg);
+}
+
+.not-rotated {
+    transform: rotate(-4deg);
 }
 
 .smallest-padding-bottom {

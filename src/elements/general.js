@@ -1,5 +1,5 @@
 import { scrollTo } from '../utils/layout';
-import { colorGreen } from '../config';
+import { colorGreen, backgroundBlue } from '../config';
 
 {/* BOUTON GO TO TOP */ }
 function buttonGoTop(scrollToTop, showButton) {
@@ -11,6 +11,41 @@ function buttonGoTop(scrollToTop, showButton) {
     );
 }
 
+function navbarElements(styleUl = {}, styleP = {}) {
+    return (
+        <ul className="navbar-nav mr-auto mt-2 mt-lg-0 navbar-elements basic-flex" style={styleUl}>
+            <li className="nav-item active">
+                <p className="navigbar-link text-navbar" onClick={scrollTo("programme")} style={styleP}>
+                    PROGRAMME</p>
+            </li>
+            <li className="nav-item active">
+                <p className="navigbar-link text-navbar" onClick={scrollTo("acces")} style={styleP}>
+                    ACCÈS</p>
+            </li>
+            <li className="nav-item active">
+                <p className="navigbar-link text-navbar" onClick={scrollTo("hotel")} style={styleP}>
+                    HÔTEL</p>
+            </li>
+            <li className="nav-item active">
+                <p className="navigbar-link text-navbar" onClick={scrollTo("rsvp")} style={styleP}>
+                    RSVP</p>
+            </li>
+            <li className="nav-item active">
+                <p className="navigbar-link text-navbar" onClick={scrollTo("dress-code")} style={styleP}>
+                    DRESS-CODE</p>
+            </li>
+            <li className="nav-item active">
+                <p className="navigbar-link text-navbar" onClick={scrollTo("info-pratiques")} style={styleP}>
+                    INFO PRATIQUES</p>
+            </li>
+            <li className="nav-item active">
+                <p className="navigbar-link text-navbar" onClick={scrollTo("photos")} style={styleP}>
+                    PHOTOS</p>
+            </li>
+        </ul>
+    )
+}
+
 function navbar(toggleClicked, width, onNavbarClick, onToggleClick) {
     return (
         <nav className="navbar navbar-expand navbar-light inscription-navbar">
@@ -18,41 +53,36 @@ function navbar(toggleClicked, width, onNavbarClick, onToggleClick) {
                 <span className="navbar-toggler-icon"></span>
             </button>
 
-            <img className="logo-navbar" alt="logo" src={require('../images/icons/logo.png')} onClick={scrollTo("titles")} />
+            <img className="logo-navbar transition" alt="logo" src={require('../images/icons/logo.png')} onClick={scrollTo("titles")} />
 
             {width > 800 ?
                 <div className="collapse navbar-collapse" id="navbarTogglerDemo01">
 
-                    <ul className="navbar-nav mr-auto mt-2 mt-lg-0 navbar-elements basic-flex">
-                        <li className="nav-item active">
-                            <p className="navigbar-link text-navbar" onClick={scrollTo("programme")}>PROGRAMME</p>
-                        </li>
-                        <li className="nav-item active">
-                            <p className="navigbar-link text-navbar" onClick={scrollTo("acces")}>ACCÈS</p>
-                        </li>
-                        <li className="nav-item active">
-                            <p className="navigbar-link text-navbar" onClick={scrollTo("hotel")}>HÔTEL</p>
-                        </li>
-                        <li className="nav-item active">
-                            <p className="navigbar-link text-navbar" onClick={scrollTo("rsvp")}>RSVP</p>
-                        </li>
-                        <li className="nav-item active">
-                            <p className="navigbar-link text-navbar" onClick={scrollTo("dress-code")}>DRESS-CODE</p>
-                        </li>
-                        <li className="nav-item active">
-                            <p className="navigbar-link text-navbar" onClick={scrollTo("info-pratiques")}>INFO PRATIQUES</p>
-                        </li>
-                        <li className="nav-item active">
-                            <p className="navigbar-link text-navbar" onClick={scrollTo("photos")}>PHOTOS</p>
-                        </li>
-                    </ul>
+                    {navbarElements()}
                 </div>
                 :
                 <div>
-                    <img src={require('../images/icons/toggle-navbar.png')} className="toggle-navbar" onClick={onToggleClick} style={{ transform: "rotate(-4deg)" }} />
+                    <img
+                        src={require('../images/icons/toggle-navbar.png')}
+                        className={toggleClicked ? "toggle-navbar transition rotated" : "toggle-navbar transition not-rotated"}
+                        onClick={onToggleClick}
+                    />
+
+                    <div>
+                        <div
+                            className={toggleClicked ? "navbar-elements-container transition" : "navbar-elements-container transition hidden"}
+                            style={{ position: "absolute", top: "100%", left: "0", width: "100%", backgroundColor: backgroundBlue, zIndex: "100", textAlign: "center", borderRadius: "0 0 40px 40px", padding: "5%" }}
+                        >
+                            <img src={require('../images/images/branche.png')} className='branche' />
+
+                            {navbarElements({ display: "grid" }, { padding: "0" })}
+
+                            <img src={require('../images/images/branche.png')} className='branche inverted' />
+                        </div>
+                    </div>
                 </div>
             }
-        </nav>
+        </nav >
     )
 }
 
