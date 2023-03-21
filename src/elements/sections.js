@@ -5,7 +5,7 @@ function titles(timeRemaining) {
     return (
         <div id="titles" className='basic-page'>
 
-            <div className='large-margin-updown'>
+            <div className='basic-margin-updown'>
                 <img src={require('../images/images/branche.png')} className='branche' />
 
                 <div>
@@ -13,11 +13,11 @@ function titles(timeRemaining) {
                     <h1 className='dactyl'>Floriane et Antoine</h1>
                 </div>
 
-                <img src={require('../images/images/branche.png')} className='branche' />
+                <img src={require('../images/images/branche.png')} className='branche inverted' />
             </div>
 
             <div>
-                <h2>Compte à rebours</h2>
+                <h3>Compte à rebours</h3>
                 <h2>{timeRemaining}</h2>
             </div>
         </div>
