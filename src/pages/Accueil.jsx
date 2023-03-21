@@ -60,6 +60,8 @@ function Accueil() {
     }
 
     function verifyMdp() {
+        console.log("mdp", mdp)
+        console.log(".env", process.env.REACT_APP_MDP)
         if (mdp === process.env.REACT_APP_MDP) {
             setMdpOk(true);
         }
