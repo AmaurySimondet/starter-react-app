@@ -1,11 +1,11 @@
 import { colorGreen, colorLightOrange, colorOrange } from '../config';
 import { div5050 } from './general';
 
-function titles(timeRemaining) {
+function titles(timeRemaining, width) {
     return (
         <div id="titles" className='basic-page'>
 
-            <div className='basic-margin-updown'>
+            <div className='basic-margin-updown' style={width < 400 ? { marginTop: "40%" } : {}}>
                 <img src={require('../images/images/branche.png')} className='branche' />
 
                 <div>
@@ -24,9 +24,18 @@ function titles(timeRemaining) {
     )
 }
 
-function programme() {
+function programme(width) {
     return (
-        <div id="programme" className="basic-page section-header smallest-padding-bottom">
+        <div id="programme" className="basic-page section-header smallest-padding-bottom"
+            style={
+                width < 400 ?
+                    { marginTop: "60%" } :
+                    width < 600 ?
+                        { marginTop: "40%" } :
+                        width < 800 ?
+                            { marginTop: "15%" }
+                            :
+                            {}}>
             <div className='basic-padding-updown'>
                 <h1 className='dactyl'>Programme</h1>
                 <img src={require('../images/images/branche.png')} className='branche' />

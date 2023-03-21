@@ -50,10 +50,6 @@ function Accueil() {
         return () => clearInterval(countdownInterval);
     }, []);
 
-    function onNavbarClick() {
-        return () => { }
-    }
-
     function onToggleClick() {
         setToggleClicked(!toggleClicked);
     }
@@ -72,13 +68,14 @@ function Accueil() {
                 </div>
                 :
                 <div>
-                    <img className="background-image" src={require('../images/images/background-image.png')} />
+                    <img className="background-image" src={require('../images/images/background-image.png')}
+                        style={dimensions.width < 800 ? { height: "100vh", width: "100vw" } : {}} />
 
-                    {navbar(toggleClicked, dimensions.width, onNavbarClick, onToggleClick)}
+                    {navbar(toggleClicked, dimensions.width, onToggleClick)}
 
-                    {titles(timeRemaining)}
+                    {titles(timeRemaining, dimensions.width)}
 
-                    {programme()}
+                    {programme(dimensions.width)}
 
                     <div id="acces" className="basic-page section-header smallest-padding-bottom" style={{ marginTop: "0" }}>
                         <div className='basic-padding-updown'>

@@ -15,38 +15,38 @@ function navbarElements(styleUl = {}, styleP = {}) {
     return (
         <ul className="navbar-nav mr-auto mt-2 mt-lg-0 navbar-elements basic-flex" style={styleUl}>
             <li className="nav-item active">
-                <p className="navigbar-link text-navbar" onClick={scrollTo("programme")} style={styleP}>
-                    PROGRAMME</p>
+                <h3 className="navigbar-link text-navbar" onClick={scrollTo("programme")} style={styleP}>
+                    PROGRAMME</h3>
             </li>
             <li className="nav-item active">
-                <p className="navigbar-link text-navbar" onClick={scrollTo("acces")} style={styleP}>
-                    ACCÈS</p>
+                <h3 className="navigbar-link text-navbar" onClick={scrollTo("acces")} style={styleP}>
+                    ACCÈS</h3>
             </li>
             <li className="nav-item active">
-                <p className="navigbar-link text-navbar" onClick={scrollTo("hotel")} style={styleP}>
-                    HÔTEL</p>
+                <h3 className="navigbar-link text-navbar" onClick={scrollTo("hotel")} style={styleP}>
+                    HÔTEL</h3>
             </li>
             <li className="nav-item active">
-                <p className="navigbar-link text-navbar" onClick={scrollTo("rsvp")} style={styleP}>
-                    RSVP</p>
+                <h3 className="navigbar-link text-navbar" onClick={scrollTo("rsvp")} style={styleP}>
+                    RSVP</h3>
             </li>
             <li className="nav-item active">
-                <p className="navigbar-link text-navbar" onClick={scrollTo("dress-code")} style={styleP}>
-                    DRESS-CODE</p>
+                <h3 className="navigbar-link text-navbar" onClick={scrollTo("dress-code")} style={styleP}>
+                    DRESS-CODE</h3>
             </li>
             <li className="nav-item active">
-                <p className="navigbar-link text-navbar" onClick={scrollTo("info-pratiques")} style={styleP}>
-                    INFO PRATIQUES</p>
+                <h3 className="navigbar-link text-navbar" onClick={scrollTo("info-pratiques")} style={styleP}>
+                    INFO PRATIQUES</h3>
             </li>
             <li className="nav-item active">
-                <p className="navigbar-link text-navbar" onClick={scrollTo("photos")} style={styleP}>
-                    PHOTOS</p>
+                <h3 className="navigbar-link text-navbar" onClick={scrollTo("photos")} style={styleP}>
+                    PHOTOS</h3>
             </li>
         </ul>
     )
 }
 
-function navbar(toggleClicked, width, onNavbarClick, onToggleClick) {
+function navbar(toggleClicked, width, onToggleClick) {
     return (
         <nav className="navbar navbar-expand navbar-light inscription-navbar">
             <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
@@ -75,7 +75,7 @@ function navbar(toggleClicked, width, onNavbarClick, onToggleClick) {
                         >
                             <img src={require('../images/images/branche.png')} className='branche' />
 
-                            {navbarElements({ display: "grid" }, { padding: "0" })}
+                            {navbarElements({ display: "grid" }, { padding: "5px" })}
 
                             <img src={require('../images/images/branche.png')} className='branche inverted' />
                         </div>
