@@ -13,7 +13,7 @@ function updateCountdown() {
     // Get the current time
     const now = new Date();
     // Set the target date to count down to (year, month (0-based), day, hour, minute, second)
-    const targetDate = new Date(2024, 6, 8, 15, 30, 0);
+    const targetDate = new Date(2024, 5, 8, 15, 30, 0);
 
     // Calculate the time remaining until the target date
     const timeRemaining = targetDate.getTime() - now.getTime();
