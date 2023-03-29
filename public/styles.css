@@ -20,6 +20,15 @@ li {
     width: 20%;
 }
 
+.block-img {
+    width: 30%;
+    margin-bottom: 10%;
+}
+
+.block-img:hover {
+    scale: 1.1;
+}
+
 .logo-navbar {
     width: 15%;
     margin-right: 5%;
@@ -58,7 +67,7 @@ li {
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    transition: all 0.3s ease-in-out;
+    transition: all 0.5s ease-in-out;
     border: 1px solid black;
 }
 
@@ -90,7 +99,7 @@ li {
 }
 
 .transition {
-    transition: all 0.3s ease-in-out;
+    transition: all 0.5s ease-in-out;
 }
 
 .hidden {
@@ -150,11 +159,41 @@ li {
     flex-grow: 1;
 }
 
+.flex-3-blocks {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+}
+
+.flexed-3-blocks {
+    width: 30%;
+    flex-grow: 1;
+    padding: 2%;
+}
+
+.flexed-separator {
+    width: 5%;
+    align-self: center;
+}
+
 .white-page {
     background-color: white;
     color: black;
     margin: auto;
     width: 80%;
+}
+
+.heighted {
+    height: 200px;
+}
+
+.no-height {
+    height: 0;
+    overflow: hidden;
+}
+
+.full-rotation {
+    transform: rotate(360deg);
 }
 
 .inverted {
@@ -196,6 +235,31 @@ li {
 }
 
 
+/* VERY LARGE SCREEN */
+@media screen and (min-width: 1200px) {
+    h1 {
+        font-size: 4vw;
+    }
+
+    h2 {
+        font-size: 3vw;
+    }
+
+    h3 {
+        font-size: 1.5vw;
+    }
+
+    p,
+    i,
+    a {
+        font-size: 1vw;
+    }
+
+    .heighted {
+        height: 800px;
+    }
+}
+
 
 
 /* LARGE SCREEN */
@@ -213,8 +277,13 @@ li {
     }
 
     p,
+    i,
     a {
         font-size: 1.5vw;
+    }
+
+    .heighted {
+        height: 600px;
     }
 }
 
@@ -232,13 +301,45 @@ li {
         font-size: 4vw;
     }
 
+
     p,
+    i,
     a {
         font-size: 2.5vw;
     }
 
     .basic-page.section-header {
         margin-top: 20%;
+    }
+
+    .heighted {
+        height: 600px;
+    }
+
+}
+
+/* EXTRA SMALL SCREEN */
+@media screen and (max-width: 400px) {
+    h1 {
+        font-size: 12vw;
+    }
+
+    h2 {
+        font-size: 8vw;
+    }
+
+    h3 {
+        font-size: 5vw;
+    }
+
+    p,
+    i,
+    a {
+        font-size: 3.5vw;
+    }
+
+    .heighted {
+        height: 800px;
     }
 
 }

@@ -1,8 +1,7 @@
 import { React, useState, useEffect } from 'react';
 import { scrollToTop, updateCountdown } from '../utils/layout';
 import { buttonGoTop, navbar } from '../elements/general';
-import { titles, programme, mdpSection } from '../elements/sections';
-import { colorGreen, colorOrange } from '../config.js';
+import { titles, programme, mdpSection, acces } from '../elements/sections';
 
 function Accueil() {
     const [showButton, setShowButton] = useState(false);
@@ -14,6 +13,9 @@ function Accueil() {
     const [toggleClicked, setToggleClicked] = useState(false);
     const [mdpOk, setMdpOk] = useState(false);
     const [mdp, setMdp] = useState('');
+    const [carTextClicked, setCarTextClicked] = useState(false);
+    const [planeTextClicked, setPlaneTextClicked] = useState(false);
+    const [trainTextClicked, setTrainTextClicked] = useState(false);
 
     // resize
     useEffect(() => {
@@ -50,10 +52,10 @@ function Accueil() {
         return () => clearInterval(countdownInterval);
     }, []);
 
+    // password
     function onToggleClick() {
         setToggleClicked(!toggleClicked);
     }
-
     function verifyMdp() {
         if (mdp === process.env.REACT_APP_MDP) {
             setMdpOk(true);
@@ -77,26 +79,7 @@ function Accueil() {
 
                     {programme(dimensions.width)}
 
-                    <div id="acces" className="basic-page section-header smallest-padding-bottom" style={{ marginTop: "0" }}>
-                        <div className='basic-padding-updown'>
-                            <h1 className='dactyl'>Accès</h1>
-                            <img src={require('../images/images/branche.png')} className='branche' />
-                        </div>
-
-                        <div className='white-page'>
-                            <div className='basic-padding-top'>
-                                <h2 style={{ color: colorGreen }}>RENDEZ-VOUS AU</h2>
-                                <h1 style={{ color: colorOrange }} className='dactyl'>Château du Bourg</h1>
-                                <h3>1552 chemin du Bourg</h3>
-                                <h3>42120 Perreux</h3>
-                            </div>
-
-
-
-                        </div>
-
-                    </div>
-
+                    {acces(carTextClicked, setCarTextClicked, planeTextClicked, setPlaneTextClicked, trainTextClicked, setTrainTextClicked)}
 
                     {buttonGoTop(scrollToTop, showButton)}
                 </div>
