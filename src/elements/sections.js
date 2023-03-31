@@ -1,5 +1,6 @@
 import { colorGreen, colorLightOrange, colorOrange } from '../config';
 import { div5050 } from './general';
+import { NavigationButtons } from './navbuttons';
 
 function titles(timeRemaining, width) {
     return (
@@ -64,7 +65,7 @@ function programme(width) {
     )
 }
 
-function mdpSection(verifyMdp, mdp, setMdp) {
+function mdpSection(verifyMdp, setMdp) {
     return (
         <div id="mdp">
             <div className="basic-page section-header smallest-padding-bottom" style={{ margin: "auto", minHeight: "100vh", display: "flex", alignItems: "center", justifyContent: "center" }}>
@@ -85,7 +86,77 @@ function mdpSection(verifyMdp, mdp, setMdp) {
     )
 }
 
-function acces(carTextClicked, setCarTextClicked, planeTextClicked, setPlaneTextClicked, trainTextClicked, setTrainTextClicked) {
+function _carDiv(carTextClicked, setCarTextClicked, style = {}) {
+    return (
+        <div className='flexed-3-blocks transition' style={style}>
+            <img
+                src={require('../images/images/car.png')}
+                className={carTextClicked ? 'block-img transition full-rotation' : 'block-img transition'}
+                onClick={() => setCarTextClicked(!carTextClicked)} />
+            <div className={carTextClicked ? 'block-text heighted transition' : 'block-text no-height transition'}>
+                <p>
+                    Le château est à 1h15 de Lyon,
+                    1h de Saint-Etienne, ou encore 1h de Vichy
+                </p>
+                <p>
+                    Le plus simple est de passer par l'A89 et de sortir à Perreux/Thizy (échangeur 33).
+                    Attention ! Si vous ratez la sortie la prochaine est à 20 min
+                </p>
+                <p>
+                    Aussi, soyez vigilants aux restrictions pollution qui peuvent ralentir le trafic depuis Lyon
+                </p>
+            </div>
+        </div>
+    )
+}
+
+function _planeDiv(planeTextClicked, setPlaneTextClicked, style = {}) {
+    return (
+        <div className='flexed-3-blocks transition' style={style}>
+            <img
+                src={require('../images/images/plane.png')}
+                className={planeTextClicked ? 'block-img transition full-rotation' : 'block-img transition'}
+                onClick={() => setPlaneTextClicked(!planeTextClicked)} />
+            <div className={planeTextClicked ? 'block-text heighted transition' : 'block-text no-height transition'}>
+                <p>
+                    Le château est à 1h30 de l'aéroport de Lyon-Saint Exupéry, et à
+                    50 min de l'aéroport de Saint-Etienne Boutheon
+                </p>
+                <p>
+                    Ensuite, nous vous recommandons de louer une voiture !
+                </p>
+            </div>
+        </div>
+    )
+}
+
+function _trainDiv(trainTextClicked, setTrainTextClicked, style = {}) {
+    return (
+        <div className='flexed-3-blocks transition' style={style}>
+            <img
+                src={require('../images/images/train.png')}
+                className={trainTextClicked ? 'block-img transition full-rotation' : 'block-img transition'}
+                style={{ width: "22%" }}
+                onClick={() => setTrainTextClicked(!trainTextClicked)} />
+            <div className={trainTextClicked ? 'block-text heighted transition' : 'block-text no-height transition'}>
+                <p>
+                    Le château est à 10 min de la gare TER de Roanne (accessible en 1h15 depuis Lyon ou Clermont-Ferrand)
+                    Une agence Rent-A-Car se trouve à proximité.
+                </p>
+                <p>
+                    Les applis de chauffeurs ne fonctionnent pas sur Roanne. Vous pouvez contacter un taxi (tel que Robert DUFOURT
+                    04 77 69 60 00
+                    taxidufourt@wanadoo.fr)
+                    ou organiser un covoiturage avec nos témoins !
+                </p>
+            </div>
+        </div>
+    )
+}
+
+function acces(carTextClicked, setCarTextClicked,
+    planeTextClicked, setPlaneTextClicked,
+    trainTextClicked, setTrainTextClicked, lastClicked) {
     return (
         <div id="acces" className="basic-page section-header smallest-padding-bottom" style={{ marginTop: "0" }}>
             <div className='basic-padding-updown'>
@@ -109,69 +180,52 @@ function acces(carTextClicked, setCarTextClicked, planeTextClicked, setPlaneText
                 <br />
                 <br />
 
-                <div className='flex-3-blocks'>
-                    <div className='flexed-3-blocks  transition'>
-                        <img
-                            src={require('../images/images/car.png')}
-                            className={carTextClicked ? 'block-img transition full-rotation' : 'block-img transition'}
-                            onClick={() => setCarTextClicked(!carTextClicked)} />
-                        <div className={carTextClicked ? 'block-text heighted transition' : 'block-text no-height transition'}>
-                            <p>
-                                Le château est à 1h15 de Lyon,
-                                1h de Saint-Etienne, ou encore 1h de Vichy
-                            </p>
-                            <p>
-                                Le plus simple est de passer par l'A89 et de sortir à Perreux/Thizy (échangeur 33).
-                                Attention ! Si vous ratez la sortie la prochaine est à 20 min
-                            </p>
-                            <p>
-                                Aussi, soyez vigilants aux restrictions pollution qui peuvent ralentir le trafic depuis Lyon
-                            </p>
-                        </div>
+
+                {!carTextClicked && !planeTextClicked && !trainTextClicked ?
+                    <div className='flex-3-blocks'>
+                        {_carDiv(carTextClicked, setCarTextClicked)}
+                        <img src={require('../images/images/green-heart.png')} className='flexed-separator heart-separator' />
+                        {_planeDiv(planeTextClicked, setPlaneTextClicked)}
+                        <img src={require('../images/images/green-heart.png')} className='flexed-separator heart-separator' />
+                        {_trainDiv(trainTextClicked, setTrainTextClicked)}
                     </div>
-                    <img src={require('../images/images/green-heart.png')} className='flexed-separator heart-separator' />
-                    <div className='flexed-3-blocks transition'>
-                        <img
-                            src={require('../images/images/plane.png')}
-                            className={planeTextClicked ? 'block-img transition full-rotation' : 'block-img transition'}
-                            onClick={() => setPlaneTextClicked(!planeTextClicked)} />
-                        <div className={planeTextClicked ? 'block-text heighted transition' : 'block-text no-height transition'}>
-                            <p>
-                                Le château est à 1h30 de l'aéroport de Lyon-Saint Exupéry, et à
-                                50 min de l'aéroport de Saint-Etienne Boutheon
-                            </p>
-                            <p>
-                                Ensuite, nous vous recommandons de louer une voiture !
-                            </p>
+
+                    : lastClicked === 'car' ?
+                        <div className='flex-3-blocks'>
+                            {_carDiv(carTextClicked, setCarTextClicked, { width: "60%" })}
+                            <img src={require('../images/images/green-heart.png')} className='flexed-separator heart-separator' />
+                            {_planeDiv(planeTextClicked, setPlaneTextClicked, { width: "15%" })}
+                            <img src={require('../images/images/green-heart.png')} className='flexed-separator heart-separator' />
+                            {_trainDiv(trainTextClicked, setTrainTextClicked, { width: "15%" })}
                         </div>
-                    </div>
-                    <img src={require('../images/images/green-heart.png')} className='flexed-separator heart-separator' />
-                    <div className='flexed-3-blocks transition'>
-                        <img
-                            src={require('../images/images/train.png')}
-                            className={trainTextClicked ? 'block-img transition full-rotation' : 'block-img transition'}
-                            style={{ width: "22%" }}
-                            onClick={() => setTrainTextClicked(!trainTextClicked)} />
-                        <div className={trainTextClicked ? 'block-text heighted transition' : 'block-text no-height transition'}>
-                            <p>
-                                Le château est à 10 min de la gare TER de Roanne (accessible en 1h15 depuis Lyon ou Clermont-Ferrand)
-                                Une agence Rent-A-Car se trouve à proximité.
-                            </p>
-                            <p>
-                                Les applis de chauffeurs ne fonctionnent pas sur Roanne. Vous pouvez contacter un taxi (tel que Robert DUFOURT
-                                04 77 69 60 00
-                                taxidufourt@wanadoo.fr)
-                                ou organiser un covoiturage avec nos témoins !
-                            </p>
-                        </div>
-                    </div>
-                </div>
+                        : lastClicked === 'plane' ?
+                            <div className='flex-3-blocks'>
+                                {_carDiv(carTextClicked, setCarTextClicked, { width: "15%" })}
+                                <img src={require('../images/images/green-heart.png')} className='flexed-separator heart-separator' />
+                                {_planeDiv(planeTextClicked, setPlaneTextClicked, { width: "60%" })}
+                                <img src={require('../images/images/green-heart.png')} className='flexed-separator heart-separator' />
+                                {_trainDiv(trainTextClicked, setTrainTextClicked, { width: "15%" })}
+                            </div>
+                            : lastClicked === 'train' ?
+                                <div className='flex-3-blocks'>
+                                    {_carDiv(carTextClicked, setCarTextClicked, { width: "15%" })}
+                                    <img src={require('../images/images/green-heart.png')} className='flexed-separator heart-separator' />
+                                    {_planeDiv(planeTextClicked, setPlaneTextClicked, { width: "15%" })}
+                                    <img src={require('../images/images/green-heart.png')} className='flexed-separator heart-separator' />
+                                    {_trainDiv(trainTextClicked, setTrainTextClicked, { width: "60%" })}
+                                </div>
+                                :
+                                <div className='flex-3-blocks'>
+                                    {_carDiv(carTextClicked, setCarTextClicked)}
+                                    <img src={require('../images/images/green-heart.png')} className='flexed-separator heart-separator' />
+                                    {_planeDiv(planeTextClicked, setPlaneTextClicked)}
+                                    <img src={require('../images/images/green-heart.png')} className='flexed-separator heart-separator' />
+                                    {_trainDiv(trainTextClicked, setTrainTextClicked)}
+                                </div>
+                }
 
-
-
-
+                {NavigationButtons({ lat: 46.046883, lng: 4.122677 })}
             </div>
-
         </div>
     )
 }

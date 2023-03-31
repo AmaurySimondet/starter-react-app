@@ -11,6 +11,9 @@ li {
     font-family: cursive;
 }
 
+.navbtn {
+    width: 15%;
+}
 
 .nav-item {
     flex-grow: 1;
@@ -102,12 +105,20 @@ li {
     transition: all 0.5s ease-in-out;
 }
 
+.full-width {
+    width: 100%;
+}
+
 .hidden {
     opacity: 0;
 }
 
 .not-hidden {
     opacity: 1;
+}
+
+.basic-margin {
+    margin: 5%;
 }
 
 .large-margin-bottom {
@@ -173,7 +184,6 @@ li {
 
 .flexed-separator {
     width: 5%;
-    align-self: center;
 }
 
 .white-page {
@@ -256,7 +266,7 @@ li {
     }
 
     .heighted {
-        height: 800px;
+        height: 400px;
     }
 }
 
@@ -283,7 +293,7 @@ li {
     }
 
     .heighted {
-        height: 600px;
+        height: 300px;
     }
 }
 
@@ -313,7 +323,7 @@ li {
     }
 
     .heighted {
-        height: 600px;
+        height: 400px;
     }
 
 }
@@ -339,7 +349,7 @@ li {
     }
 
     .heighted {
-        height: 800px;
+        height: 400px;
     }
 
 }

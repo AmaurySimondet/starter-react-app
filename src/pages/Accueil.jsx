@@ -3,6 +3,7 @@ import { scrollToTop, updateCountdown } from '../utils/layout';
 import { buttonGoTop, navbar } from '../elements/general';
 import { titles, programme, mdpSection, acces } from '../elements/sections';
 
+
 function Accueil() {
     const [showButton, setShowButton] = useState(false);
     const [timeRemaining, setTimeRemaining] = useState('');
@@ -16,6 +17,7 @@ function Accueil() {
     const [carTextClicked, setCarTextClicked] = useState(false);
     const [planeTextClicked, setPlaneTextClicked] = useState(false);
     const [trainTextClicked, setTrainTextClicked] = useState(false);
+    const [lastClicked, setLastClicked] = useState('');
 
     // resize
     useEffect(() => {
@@ -62,11 +64,29 @@ function Accueil() {
         }
     }
 
+    useEffect(() => {
+        if (carTextClicked && lastClicked !== 'car') {
+            setLastClicked('car');
+            setPlaneTextClicked(false);
+            setTrainTextClicked(false);
+        } else if (planeTextClicked && lastClicked !== 'plane') {
+            setLastClicked('plane');
+            setCarTextClicked(false);
+            setTrainTextClicked(false);
+        } else if (trainTextClicked && lastClicked !== 'train') {
+            setLastClicked('train');
+            setCarTextClicked(false);
+            setPlaneTextClicked(false);
+        }
+        console.log(lastClicked, carTextClicked, planeTextClicked, trainTextClicked);
+    }, [carTextClicked, planeTextClicked, trainTextClicked]);
+
+
     return (
         <div>
             {mdpOk === false ?
                 <div>
-                    {mdpSection(verifyMdp, mdp, setMdp)}
+                    {mdpSection(verifyMdp, setMdp)}
                 </div>
                 :
                 <div>
@@ -79,7 +99,7 @@ function Accueil() {
 
                     {programme(dimensions.width)}
 
-                    {acces(carTextClicked, setCarTextClicked, planeTextClicked, setPlaneTextClicked, trainTextClicked, setTrainTextClicked)}
+                    {acces(carTextClicked, setCarTextClicked, planeTextClicked, setPlaneTextClicked, trainTextClicked, setTrainTextClicked, lastClicked)}
 
                     {buttonGoTop(scrollToTop, showButton)}
                 </div>
