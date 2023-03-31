@@ -184,42 +184,42 @@ function acces(carTextClicked, setCarTextClicked,
                 {!carTextClicked && !planeTextClicked && !trainTextClicked ?
                     <div className='flex-3-blocks'>
                         {_carDiv(carTextClicked, setCarTextClicked)}
-                        <img src={require('../images/images/green-heart.png')} className='flexed-separator heart-separator' />
+                        <img src={require('../images/images/green-heart.png')} className='flexed-separator ' />
                         {_planeDiv(planeTextClicked, setPlaneTextClicked)}
-                        <img src={require('../images/images/green-heart.png')} className='flexed-separator heart-separator' />
+                        <img src={require('../images/images/green-heart.png')} className='flexed-separator ' />
                         {_trainDiv(trainTextClicked, setTrainTextClicked)}
                     </div>
 
                     : lastClicked === 'car' ?
                         <div className='flex-3-blocks'>
                             {_carDiv(carTextClicked, setCarTextClicked, { width: "60%" })}
-                            <img src={require('../images/images/green-heart.png')} className='flexed-separator heart-separator' />
+                            <img src={require('../images/images/green-heart.png')} className='flexed-separator ' />
                             {_planeDiv(planeTextClicked, setPlaneTextClicked, { width: "15%" })}
-                            <img src={require('../images/images/green-heart.png')} className='flexed-separator heart-separator' />
+                            <img src={require('../images/images/green-heart.png')} className='flexed-separator ' />
                             {_trainDiv(trainTextClicked, setTrainTextClicked, { width: "15%" })}
                         </div>
                         : lastClicked === 'plane' ?
                             <div className='flex-3-blocks'>
                                 {_carDiv(carTextClicked, setCarTextClicked, { width: "15%" })}
-                                <img src={require('../images/images/green-heart.png')} className='flexed-separator heart-separator' />
+                                <img src={require('../images/images/green-heart.png')} className='flexed-separator ' />
                                 {_planeDiv(planeTextClicked, setPlaneTextClicked, { width: "60%" })}
-                                <img src={require('../images/images/green-heart.png')} className='flexed-separator heart-separator' />
+                                <img src={require('../images/images/green-heart.png')} className='flexed-separator ' />
                                 {_trainDiv(trainTextClicked, setTrainTextClicked, { width: "15%" })}
                             </div>
                             : lastClicked === 'train' ?
                                 <div className='flex-3-blocks'>
                                     {_carDiv(carTextClicked, setCarTextClicked, { width: "15%" })}
-                                    <img src={require('../images/images/green-heart.png')} className='flexed-separator heart-separator' />
+                                    <img src={require('../images/images/green-heart.png')} className='flexed-separator ' />
                                     {_planeDiv(planeTextClicked, setPlaneTextClicked, { width: "15%" })}
-                                    <img src={require('../images/images/green-heart.png')} className='flexed-separator heart-separator' />
+                                    <img src={require('../images/images/green-heart.png')} className='flexed-separator ' />
                                     {_trainDiv(trainTextClicked, setTrainTextClicked, { width: "60%" })}
                                 </div>
                                 :
                                 <div className='flex-3-blocks'>
                                     {_carDiv(carTextClicked, setCarTextClicked)}
-                                    <img src={require('../images/images/green-heart.png')} className='flexed-separator heart-separator' />
+                                    <img src={require('../images/images/green-heart.png')} className='flexed-separator ' />
                                     {_planeDiv(planeTextClicked, setPlaneTextClicked)}
-                                    <img src={require('../images/images/green-heart.png')} className='flexed-separator heart-separator' />
+                                    <img src={require('../images/images/green-heart.png')} className='flexed-separator ' />
                                     {_trainDiv(trainTextClicked, setTrainTextClicked)}
                                 </div>
                 }
@@ -233,4 +233,27 @@ function acces(carTextClicked, setCarTextClicked,
     )
 }
 
-export { titles, programme, mdpSection, acces }
+function footer() {
+    return (
+        <div>
+            <div className="basic-page section-header smallest-padding-bottom" style={{ marginTop: "0" }}>
+                <div className='basic-padding-updown'>
+                </div>
+            </div>
+
+            <div className="basic-page section-header smallest-padding-bottom" style={{ marginTop: "0" }}>
+                <img src={require('../images/images/branche.png')} className='branche' />
+                <div className='basic-padding-updown'>
+                </div>
+            </div>
+
+            <div className="basic-page white-page">
+                <i style={{ alignSelf: "center" }}>
+                    Site réalisé par <a href="mailto:amaury.simondet@hotmail.com">Amaury Simondet</a> - 2023
+                </i>
+            </div>
+        </div>
+    )
+}
+
+export { titles, programme, mdpSection, acces, footer }
