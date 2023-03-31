@@ -224,7 +224,10 @@ function acces(carTextClicked, setCarTextClicked,
                                 </div>
                 }
 
+                <img src={require('../images/images/plan.png')} alt="plan" className='full-width' />
+
                 {NavigationButtons({ lat: 46.046883, lng: 4.122677 })}
+
             </div>
         </div>
     )
