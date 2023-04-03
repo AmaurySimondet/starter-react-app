@@ -30,11 +30,11 @@ function programme(width) {
         <div id="programme" className="basic-page section-header smallest-padding-bottom"
             style={
                 width < 400 ?
-                    { marginTop: "60%" } :
+                    { marginTop: "90%" } :
                     width < 600 ?
-                        { marginTop: "40%" } :
+                        { marginTop: "60%" } :
                         width < 800 ?
-                            { marginTop: "15%" }
+                            { marginTop: "30%" }
                             :
                             {}}>
             <div className='basic-padding-updown'>
@@ -256,4 +256,139 @@ function footer() {
     )
 }
 
-export { titles, programme, mdpSection, acces, footer }
+function hotel() {
+    return (
+        <div id="hotel" className="basic-page section-header smallest-padding-bottom" style={{ marginTop: "0" }}>
+            <div className='basic-padding-updown'>
+                <h1 className='dactyl'>Hôtel</h1>
+                <img src={require('../images/images/branche.png')} className='branche' />
+            </div>
+
+            <div className='white-page'>
+                <div className='basic-padding'>
+                    <p>Il y a environ 250 chambres d'hôtels, gîtes et chambres d'hôtes dans un rayon de 10 min en voiture du Château</p>
+
+                    <img src={require('../images/images/hotels.png')} className='full-width' />
+
+                    <div className='flex-50-50 basic-margin'>
+                        <a href="https://vu.fr/aBcR" style={{ color: colorOrange }} className='dactyl flexed-50-50 transition hovered'>
+                            <h2>Booking.com </h2>
+                        </a>
+
+                        <a href="https://vu.fr/mJhx" style={{ color: colorOrange }} className='dactyl flexed-50-50 transition hovered'>
+                            <h2>Hotels.com </h2>
+                        </a>
+                    </div>
+
+                    <img src={require('../images/images/airbnb.png')} className='full-width' />
+
+                    <div className='flex-50-50 basic-margin'>
+                        <a href="https://vu.fr/ULAE" style={{ color: colorOrange }} className='dactyl flexed-50-50 transition hovered'>
+                            <h2>Airbnb.com </h2>
+                        </a>
+                    </div>
+
+                    <img src={require('../images/images/green-heart.png')} className='heart-separator basic-margin-bottom' />
+
+                    <div className='flex-50-50 basic-margin'>
+                        <img src={require('../images/images/tente.png')} className='flexed-50-50' />
+                        <p className='flexed-50-50'>
+                            Le Château du Bourg propose un espace pour les tentes et un parking dédié pour les camping-cars en cas de besoin. N'hésitez pas à nous faire part de votre désir d'en profiter, le cas échéant.
+                        </p>
+                    </div>
+
+                    <img src={require('../images/images/green-heart.png')} className='heart-separator basic-margin-bottom' />
+
+                    <h2 style={{ color: colorGreen }} className='dactyl'>
+                        Et si vous en profitiez pour découvrir Roanne ?
+                    </h2>
+
+
+                    <img src={require('../images/images/roanne.png')} style={{ width: "50%" }} className='basic-margin-bottom' />
+
+                    <p>
+                        Visiter Roanne et ses halles gourmandes, flâner sur les bords de Loire, s'extasier dans les villages de caractère de Saint-Jean-Saint-Maurice-sur Loire et de Saint-Haon-le-Châtel, se prendre pour des seigneurs au Château de l'Aubépin à Fourneaux et profiter des expositions gratuites au Château de Beaulieu à Riorges, voici de quoi passer de bons moments pour ceux qui souhaitent rester sur un week-end prolongé !
+                    </p>
+
+                    <div className='flex-50-50 basic-margin'>
+                        <a href="www.roannais-tourisme.com" style={{ color: colorOrange }} className='dactyl flexed-50-50 transition hovered'>
+                            <h2>roannais-tourisme.com </h2>
+                        </a>
+
+                        <a href="www.instagram.com/villederoanne" style={{ color: colorOrange }} className='dactyl flexed-50-50 transition hovered'>
+                            <h2>Instagram</h2>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    )
+}
+
+function rsvp() {
+    return (
+        <div id="rsvp" className="basic-page smallest-padding-bottom">
+            <div className='basic-padding-updown'>
+                <h1 className='dactyl'>RSVP</h1>
+                <img src={require('../images/images/branche.png')} className='branche' />
+            </div>
+
+            <div className='white-page'>
+                <div className='basic-padding-updown'>
+                    <p>Cliquez ci-dessous pour compléter le formulaire de réponse :</p>
+                    <a href="https://forms.gle/bXF6xAeHF97PzTo99" style={{ color: colorGreen }} >
+                        <h2 className='dactyl transition hovered'> Google Form </h2>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    )
+}
+
+function dressCode(width) {
+    return (
+        <div id="dress-code" className="basic-page smallest-padding-bottom">
+            <div className='basic-padding-updown'>
+                <h1 className='dactyl'>Dress Code</h1>
+                <img src={require('../images/images/branche.png')} className='branche' />
+            </div>
+
+            <div className='white-page'>
+                <div className='basic-padding-updown' style={{ padding: "5%" }}>
+                    <div className='basic-flex basic-margin-bottom'>
+                        <div className="circle transition big-hovered" style={width < 600 ? { width: "25px", height: "25px", backgroundColor: "#8d7268" } : { width: "50px", height: "50px", backgroundColor: "#8d7268" }}></div>
+                        <div className="circle transition big-hovered" style={width < 600 ? { width: "25px", height: "25px", backgroundColor: "#c5856d" } : { width: "50px", height: "50px", backgroundColor: "#c5856d" }}></div>
+                        <div className="circle transition big-hovered" style={width < 600 ? { width: "25px", height: "25px", backgroundColor: "#d0b084" } : { width: "50px", height: "50px", backgroundColor: "#d0b084" }}></div>
+                        <div className="circle transition big-hovered" style={width < 600 ? { width: "25px", height: "25px", backgroundColor: "#689d71" } : { width: "50px", height: "50px", backgroundColor: "#689d71" }}></div>
+                        <div className="circle transition big-hovered" style={width < 600 ? { width: "25px", height: "25px", backgroundColor: "#89cd95" } : { width: "50px", height: "50px", backgroundColor: "#89cd95" }}></div>
+                        <div className="circle transition big-hovered" style={width < 600 ? { width: "25px", height: "25px", backgroundColor: "#cfa89b" } : { width: "50px", height: "50px", backgroundColor: "#cfa89b" }}></div>
+                        <div className="circle transition big-hovered" style={width < 600 ? { width: "25px", height: "25px", backgroundColor: "#c56c87" } : { width: "50px", height: "50px", backgroundColor: "#c56c87" }}></div>
+                    </div>
+
+                    <p>
+                        Nous vous proposons de venir en <u>tenue de soirée printanière.</u>
+                    </p>
+                    <p>
+                        Mesdames, veillez à bannir le blanc et ses déclinaisons ! Aussi, les robes/shorts trop courts sont à éviter.
+                        Prenez également en compte, dans le choix de vos souliers, que la cérémonie aura lieu sur l'herbe.
+                    </p>
+                    <p>
+                        Messieurs, privilégiez un look cravate ou nœud-papillon, et cachez vos mollets que nous ne saurions voir !
+                    </p>
+                    <p>
+                        Selon votre teint, la palette des couleurs printanières est plutôt naturelle : taupe, vert sauge, rose...
+                        Rien d'obligatoire mais en total look ou en détail coloré, nous apprécierons le clin d'oeil !
+                    </p>
+
+                    <img src={require('../images/images/green-heart.png')} className='heart-separator basic-margin-updown' />
+                </div>
+            </div>
+
+        </div>
+    )
+}
+
+export { titles, programme, mdpSection, acces, footer, hotel, rsvp, dressCode }
