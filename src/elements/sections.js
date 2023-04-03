@@ -25,7 +25,7 @@ function titles(timeRemaining, width) {
     )
 }
 
-function programme(width) {
+function programme(width, adminMdpOk) {
     return (
         <div id="programme" className="basic-page section-header smallest-padding-bottom"
             style={
@@ -50,14 +50,22 @@ function programme(width) {
                     <p style={{ color: colorLightOrange }} >Les horaires peuvent être soumis à modifications</p>
                 </div>
 
-                <div className='basic-margin-top'>
-                    {div5050("15h30", "Pot d'accueil", "accueil.png", true)}
-                    {div5050("16h30", "Cérémonie d'engagement", "ceremonie.gif", false, { width: "85%" })}
-                    {div5050("17h30", "Vin d'honneur", "apero.svg", true)}
-                    {div5050("20h00", "Dîner", "diner.svg", false, { width: "45%" })}
-                    {div5050("23h30", "Ouverture du bal", "soiree.svg", true)}
+                {adminMdpOk ?
+                    <div className='basic-margin-top'>
+                        {div5050("15h30", "Pot d'accueil", "accueil.png", true)}
+                        {div5050("16h30", "Cérémonie d'engagement", "ceremonie.gif", false, { width: "85%" })}
+                        {div5050("17h30", "Vin d'honneur", "apero.svg", true)}
+                        {div5050("20h00", "Dîner", "diner.svg", false, { width: "45%" })}
+                        {div5050("23h30", "Ouverture du bal", "soiree.svg", true)}
 
-                </div>
+                    </div>
+                    :
+                    <div className='basic-margin-top basic-padding-bottom'>
+                        <p>
+                            Rendez vous dans l'après-midi, programme à venir...
+                        </p>
+                    </div>
+                }
 
             </div>
 
@@ -327,23 +335,32 @@ function hotel() {
     )
 }
 
-function rsvp() {
+function reponse(adminMdpOk) {
     return (
-        <div id="rsvp" className="basic-page smallest-padding-bottom">
+        <div id="reponse" className="basic-page smallest-padding-bottom">
             <div className='basic-padding-updown'>
-                <h1 className='dactyl'>RSVP</h1>
+                <h1 className='dactyl'>Réponse</h1>
                 <img src={require('../images/images/branche.png')} className='branche' />
             </div>
 
             <div className='white-page'>
-                <div className='basic-padding-updown'>
-                    <p>Cliquez ci-dessous pour compléter le formulaire de réponse :</p>
-                    <a href="https://forms.gle/bXF6xAeHF97PzTo99" style={{ color: colorGreen }} >
-                        <h2 className='dactyl transition hovered'> Google Form </h2>
-                    </a>
-                </div>
-            </div>
+                {
+                    adminMdpOk ?
+                        <div className='basic-padding-updown'>
+                            <p>Cliquez ci-dessous pour compléter le formulaire de réponse :</p>
+                            <a href="https://forms.gle/bXF6xAeHF97PzTo99" style={{ color: colorGreen }} >
+                                <h2 className='dactyl transition hovered'> Google Form </h2>
+                            </a>
+                        </div>
+                        :
+                        <div style={{ padding: "5%" }}>
+                            <p>
+                                Vous pourrez bientôt compléter ici le formulaire de réponse à notre invitation
+                            </p>
+                        </div>
+                }
 
+            </div>
         </div>
     )
 }
@@ -359,13 +376,34 @@ function dressCode(width) {
             <div className='white-page'>
                 <div className='basic-padding-updown' style={{ padding: "5%" }}>
                     <div className='basic-flex basic-margin-bottom'>
-                        <div className="circle transition big-hovered" style={width < 600 ? { width: "25px", height: "25px", backgroundColor: "#8d7268" } : { width: "50px", height: "50px", backgroundColor: "#8d7268" }}></div>
-                        <div className="circle transition big-hovered" style={width < 600 ? { width: "25px", height: "25px", backgroundColor: "#c5856d" } : { width: "50px", height: "50px", backgroundColor: "#c5856d" }}></div>
-                        <div className="circle transition big-hovered" style={width < 600 ? { width: "25px", height: "25px", backgroundColor: "#d0b084" } : { width: "50px", height: "50px", backgroundColor: "#d0b084" }}></div>
-                        <div className="circle transition big-hovered" style={width < 600 ? { width: "25px", height: "25px", backgroundColor: "#689d71" } : { width: "50px", height: "50px", backgroundColor: "#689d71" }}></div>
-                        <div className="circle transition big-hovered" style={width < 600 ? { width: "25px", height: "25px", backgroundColor: "#89cd95" } : { width: "50px", height: "50px", backgroundColor: "#89cd95" }}></div>
-                        <div className="circle transition big-hovered" style={width < 600 ? { width: "25px", height: "25px", backgroundColor: "#cfa89b" } : { width: "50px", height: "50px", backgroundColor: "#cfa89b" }}></div>
-                        <div className="circle transition big-hovered" style={width < 600 ? { width: "25px", height: "25px", backgroundColor: "#c56c87" } : { width: "50px", height: "50px", backgroundColor: "#c56c87" }}></div>
+                        <div
+                            className="circle transition big-hovered"
+                            onClick={() => document.body.style.backgroundColor = "#8d7268"}
+                            style={width < 600 ? { width: "25px", height: "25px", backgroundColor: "#8d7268" } : { width: "50px", height: "50px", backgroundColor: "#8d7268" }}></div>
+                        <div
+                            onClick={() => document.body.style.backgroundColor = "#c5856d"}
+                            className="circle transition big-hovered"
+                            style={width < 600 ? { width: "25px", height: "25px", backgroundColor: "#c5856d" } : { width: "50px", height: "50px", backgroundColor: "#c5856d" }}></div>
+                        <div
+                            className="circle transition big-hovered"
+                            onClick={() => document.body.style.backgroundColor = "#d0b084"}
+                            style={width < 600 ? { width: "25px", height: "25px", backgroundColor: "#d0b084" } : { width: "50px", height: "50px", backgroundColor: "#d0b084" }}></div>
+                        <div
+                            className="circle transition big-hovered"
+                            onClick={() => document.body.style.backgroundColor = "#689d71"}
+                            style={width < 600 ? { width: "25px", height: "25px", backgroundColor: "#689d71" } : { width: "50px", height: "50px", backgroundColor: "#689d71" }}></div>
+                        <div
+                            className="circle transition big-hovered"
+                            onClick={() => document.body.style.backgroundColor = "#89cd95"}
+                            style={width < 600 ? { width: "25px", height: "25px", backgroundColor: "#89cd95" } : { width: "50px", height: "50px", backgroundColor: "#89cd95" }}></div>
+                        <div
+                            className="circle transition big-hovered"
+                            onClick={() => document.body.style.backgroundColor = "#cfa89b"}
+                            style={width < 600 ? { width: "25px", height: "25px", backgroundColor: "#cfa89b" } : { width: "50px", height: "50px", backgroundColor: "#cfa89b" }}></div>
+                        <div
+                            className="circle transition big-hovered"
+                            onClick={() => document.body.style.backgroundColor = "#c56c87"}
+                            style={width < 600 ? { width: "25px", height: "25px", backgroundColor: "#c56c87" } : { width: "50px", height: "50px", backgroundColor: "#c56c87" }}></div>
                     </div>
 
                     <p>
@@ -391,4 +429,4 @@ function dressCode(width) {
     )
 }
 
-export { titles, programme, mdpSection, acces, footer, hotel, rsvp, dressCode }
+export { titles, programme, mdpSection, acces, footer, hotel, reponse, dressCode }

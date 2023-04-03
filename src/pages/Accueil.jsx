@@ -1,7 +1,7 @@
 import { React, useState, useEffect } from 'react';
 import { scrollToTop, updateCountdown } from '../utils/layout';
 import { buttonGoTop, navbar } from '../elements/general';
-import { titles, programme, mdpSection, acces, footer, hotel, rsvp, dressCode } from '../elements/sections';
+import { titles, programme, mdpSection, acces, footer, hotel, reponse, dressCode } from '../elements/sections';
 
 function Accueil() {
     const [showButton, setShowButton] = useState(false);
@@ -12,6 +12,7 @@ function Accueil() {
     })
     const [toggleClicked, setToggleClicked] = useState(false);
     const [mdpOk, setMdpOk] = useState(false);
+    const [adminMdpOk, setAdminMdpOk] = useState(false);
     const [mdp, setMdp] = useState('');
     const [carTextClicked, setCarTextClicked] = useState(false);
     const [planeTextClicked, setPlaneTextClicked] = useState(false);
@@ -54,13 +55,22 @@ function Accueil() {
     }, []);
 
     // password
-    function onToggleClick() {
-        setToggleClicked(!toggleClicked);
-    }
     function verifyMdp() {
         if (mdp === process.env.REACT_APP_MDP) {
             setMdpOk(true);
         }
+        if (mdp === process.env.REACT_APP_ADMIN_MDP) {
+            setAdminMdpOk(true);
+        }
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth' // for smoothly scrolling
+        });
+    }
+
+    //navbar
+    function onToggleClick() {
+        setToggleClicked(!toggleClicked);
     }
 
     useEffect(() => {
@@ -82,33 +92,36 @@ function Accueil() {
 
     return (
         <div>
-            {mdpOk === false ?
+            {mdpOk === false && adminMdpOk === false ?
                 <div>
                     {mdpSection(verifyMdp, setMdp)}
                 </div>
                 :
-                <div>
-                    <img className="background-image" src={require('../images/images/background-image.png')}
-                        style={dimensions.width < 800 ? { height: "100vh", width: "100vw" } : {}} />
+                mdpOk || adminMdpOk ?
+                    <div>
+                        <img className="background-image" src={require('../images/images/background-image.png')}
+                            style={dimensions.width < 800 ? { height: "100vh", width: "100vw" } : {}} />
 
-                    {navbar(toggleClicked, dimensions.width, onToggleClick)}
+                        {navbar(toggleClicked, dimensions.width, onToggleClick)}
 
-                    {titles(timeRemaining, dimensions.width)}
+                        {titles(timeRemaining, dimensions.width)}
 
-                    {programme(dimensions.width)}
+                        {programme(dimensions.width, adminMdpOk)}
 
-                    {acces(carTextClicked, setCarTextClicked, planeTextClicked, setPlaneTextClicked, trainTextClicked, setTrainTextClicked, lastClicked)}
+                        {acces(carTextClicked, setCarTextClicked, planeTextClicked, setPlaneTextClicked, trainTextClicked, setTrainTextClicked, lastClicked)}
 
-                    {buttonGoTop(scrollToTop, showButton)}
+                        {buttonGoTop(scrollToTop, showButton)}
 
-                    {hotel()}
+                        {hotel()}
 
-                    {rsvp()}
+                        {reponse(adminMdpOk)}
 
-                    {dressCode(dimensions.width)}
+                        {dressCode(dimensions.width)}
 
-                    {footer()}
-                </div >
+                        {footer()}
+                    </div >
+                    :
+                    {}
             }
         </div>
     )

@@ -1,5 +1,5 @@
 import { scrollTo } from '../utils/layout';
-import { colorGreen, backgroundBlue } from '../config';
+import { colorGreen, backgroundBeige } from '../config';
 
 {/* BOUTON GO TO TOP */ }
 function buttonGoTop(scrollToTop, showButton) {
@@ -27,8 +27,8 @@ function navbarElements(styleUl = {}, styleP = {}) {
                     HÔTEL</h3>
             </li>
             <li className="nav-item active">
-                <h3 className="navigbar-link text-navbar" onClick={scrollTo("rsvp")} style={styleP}>
-                    RSVP</h3>
+                <h3 className="navigbar-link text-navbar" onClick={scrollTo("reponse")} style={styleP}>
+                    RÉPONSE</h3>
             </li>
             <li className="nav-item active">
                 <h3 className="navigbar-link text-navbar" onClick={scrollTo("dress-code")} style={styleP}>
@@ -71,7 +71,7 @@ function navbar(toggleClicked, width, onToggleClick) {
                     <div>
                         <div
                             className={toggleClicked ? "navbar-elements-container transition" : "navbar-elements-container transition hidden"}
-                            style={{ position: "absolute", top: "100%", left: "0", width: "100%", backgroundColor: backgroundBlue, zIndex: "100", textAlign: "center", borderRadius: "0 0 40px 40px", padding: "5%" }}
+                            style={{ position: "absolute", top: "100%", left: "0", width: "100%", backgroundColor: "#7f8aa3", zIndex: "100", textAlign: "center", borderRadius: "0 0 40px 40px", padding: "5%" }}
                         >
                             <img src={require('../images/images/branche.png')} className='branche' />
 
