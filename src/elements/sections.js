@@ -4,7 +4,20 @@ import { NavigationButtons } from './navbuttons';
 
 function titles(timeRemaining, width) {
     return (
-        <div id="titles" className='basic-page'>
+        <div id="titles" className='basic-page' style={
+            width < 200 ?
+                { marginTop: "80%" } :
+                width < 300 ?
+                    { marginTop: "60%" } :
+                    width < 400 ?
+                        { marginTop: "40%" } :
+                        width < 500 ?
+                            { marginTop: "20%" } :
+                            width >= 600 ?
+                                { marginTop: "10%" }
+                                :
+                                {}
+        }>
 
             <div className='basic-margin-updown' style={width < 400 ? { marginTop: "40%" } : {}}>
                 <img src={require('../images/images/branche.png')} className='branche' />
@@ -29,14 +42,28 @@ function programme(width, adminMdpOk) {
     return (
         <div id="programme" className="basic-page section-header smallest-padding-bottom"
             style={
-                width < 400 ?
-                    { marginTop: "90%" } :
-                    width < 600 ?
-                        { marginTop: "110%" } :
-                        width < 800 ?
-                            { marginTop: "30%" }
-                            :
-                            {}}>
+                width < 200 ?
+                    { marginTop: "310%" } :
+                    width < 300 ?
+                        { marginTop: "210%" } :
+                        width < 400 ?
+                            { marginTop: "130%" } :
+                            width < 500 ?
+                                { marginTop: "110%" } :
+                                width < 600 ?
+                                    { marginTop: "70%" }
+                                    :
+                                    width < 700 ?
+                                        { marginTop: "50%" }
+                                        :
+                                        width < 800 ?
+                                            { marginTop: "40%" }
+                                            :
+                                            width >= 800 ?
+                                                { marginTop: "60%" }
+                                                :
+                                                {}
+            }>
             <div className='basic-padding-updown'>
                 <h1 className='dactyl'>Programme</h1>
                 <img src={require('../images/images/branche.png')} className='branche' />
@@ -69,7 +96,7 @@ function programme(width, adminMdpOk) {
 
             </div>
 
-        </div>
+        </div >
     )
 }
 
