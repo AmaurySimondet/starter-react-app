@@ -100,7 +100,7 @@ function programme(width, adminMdpOk) {
     )
 }
 
-function mdpSection(verifyMdp, setMdp) {
+function mdpSection(verifyMdp, setMdp, passwordWrong) {
     return (
         <div id="mdp">
             <div className="basic-page section-header smallest-padding-bottom" style={{ margin: "auto", minHeight: "100vh", display: "flex", alignItems: "center", justifyContent: "center" }}>
@@ -112,6 +112,13 @@ function mdpSection(verifyMdp, setMdp) {
                     <button onClick={verifyMdp} className="btn btn-light" style={{ marginTop: "10px" }}>
                         Valider
                     </button>
+                    {passwordWrong ?
+                        <div className="wrong-password">
+                            Mot de passe incorrect
+                        </div>
+                        :
+                        null
+                    }
                     <br />
 
                     <img src={require('../images/images/branche.png')} className='branche inverted' />
@@ -465,7 +472,7 @@ function infoPratiques() {
             </div>
 
             <div className='white-page'>
-                <div className='basic-padding-top'>
+                <div className='basic-padding-top basic-padding-leftright'>
                     <h3 style={{ color: colorGreen }}>
                         COORDONNÉES DES FUTURS MARIÉS
                     </h3>
@@ -483,7 +490,7 @@ function infoPratiques() {
 
                 <img src={require('../images/images/green-heart.png')} className='heart-separator basic-margin-updown' />
 
-                <div className='basic-padding-top'>
+                <div className='basic-padding-top basic-padding-leftright'>
                     <h3 style={{ color: colorGreen }}>
                         COORDONNÉES DE NOS TÉMOINS
                     </h3>
@@ -514,7 +521,7 @@ function infoPratiques() {
 
                 <img src={require('../images/images/green-heart.png')} className='heart-separator basic-margin-updown' />
 
-                <div className='basic-padding-top'>
+                <div className='basic-padding-top basic-padding-leftright'>
                     <h3 style={{ color: colorGreen }}>
                         LISTE DE MARIAGE
                     </h3>

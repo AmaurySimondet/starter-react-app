@@ -18,6 +18,7 @@ function Accueil() {
     const [planeTextClicked, setPlaneTextClicked] = useState(false);
     const [trainTextClicked, setTrainTextClicked] = useState(false);
     const [lastClicked, setLastClicked] = useState('');
+    const [passwordWrong, setPasswordWrong] = useState(false);
 
     // resize
     useEffect(() => {
@@ -62,6 +63,9 @@ function Accueil() {
         if (mdp === process.env.REACT_APP_ADMIN_MDP) {
             setAdminMdpOk(true);
         }
+        else {
+            setPasswordWrong(true);
+        }
         window.scrollTo({
             top: 0,
             behavior: 'smooth' // for smoothly scrolling
@@ -73,6 +77,7 @@ function Accueil() {
         setToggleClicked(!toggleClicked);
     }
 
+    //acces text on element click
     useEffect(() => {
         if (carTextClicked && lastClicked !== 'car') {
             setLastClicked('car');
@@ -94,7 +99,7 @@ function Accueil() {
         <div>
             {mdpOk === false && adminMdpOk === false ?
                 <div>
-                    {mdpSection(verifyMdp, setMdp)}
+                    {mdpSection(verifyMdp, setMdp, passwordWrong)}
                 </div>
                 :
                 mdpOk || adminMdpOk ?
