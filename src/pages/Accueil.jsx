@@ -1,7 +1,7 @@
 import { React, useState, useEffect } from 'react';
 import { scrollToTop, updateCountdown } from '../utils/layout';
 import { buttonGoTop, navbar } from '../elements/general';
-import { titles, programme, mdpSection, acces, footer, hotel, reponse, dressCode } from '../elements/sections';
+import { titles, programme, mdpSection, acces, footer, hotel, reponse, dressCode, infoPratiques, photos } from '../elements/sections';
 
 function Accueil() {
     const [showButton, setShowButton] = useState(false);
@@ -118,12 +118,16 @@ function Accueil() {
 
                         {dressCode(dimensions.width)}
 
+                        {infoPratiques()}
+
+                        {photos()}
+
                         {footer()}
                     </div >
                     :
                     {}
             }
-        </div>
+        </div >
     )
 }
 

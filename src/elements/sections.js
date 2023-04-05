@@ -456,4 +456,100 @@ function dressCode(width) {
     )
 }
 
-export { titles, programme, mdpSection, acces, footer, hotel, reponse, dressCode }
+function infoPratiques() {
+    return (
+        <div id="info-pratiques" className="basic-page smallest-padding-bottom">
+            <div className='basic-padding-updown'>
+                <h1 className='dactyl'>Accès</h1>
+                <img src={require('../images/images/branche.png')} className='branche' />
+            </div>
+
+            <div className='white-page'>
+                <div className='basic-padding-top'>
+                    <h3 style={{ color: colorGreen }}>
+                        COORDONNÉES DES FUTURS MARIÉS
+                    </h3>
+                    <div className='flex-50-50'>
+                        <div className='flexed-50-50'>
+                            <strong>Floriane SIMONDET</strong>
+                            <p>floriane.simondet@gmail.com</p>
+                        </div>
+                        <div className='flexed-50-50'>
+                            <strong>Antoine LEOST</strong>
+                            <p>leost.antoine@gmail.com</p>
+                        </div>
+                    </div>
+                </div>
+
+                <img src={require('../images/images/green-heart.png')} className='heart-separator basic-margin-updown' />
+
+                <div className='basic-padding-top'>
+                    <h3 style={{ color: colorGreen }}>
+                        COORDONNÉES DE NOS TÉMOINS
+                    </h3>
+                    <p>
+                        Pour la planification de surprises, un covoiturage ou la récole d'informations complémentaires, vous pouvez contacter nos témoins. NB : Nous ne souhaitons pas mettre de rétroprojecteur à disposition.
+                    </p>
+                    <div className='flex-50-50'>
+                        <div className='flexed-50-50'>
+                            <strong>Emeline SIMONDET</strong>
+                            <p>emeline.s@ntymail.com</p>
+                        </div>
+                        <div className='flexed-50-50'>
+                            <strong>Rémi DODIER</strong>
+                            <p>dodier.remi@gmail.com</p>
+                        </div>
+                    </div>
+                    <div className='flex-50-50'>
+                        <div className='flexed-50-50'>
+                            <strong>Alexandra SCLAUNICK</strong>
+                            <p>sclaunicka@gmail.com</p>
+                        </div>
+                        <div className='flexed-50-50'>
+                            <strong>Alexandre MONACO</strong>
+                            <p>alexandremonaco@hotmail.fr</p>
+                        </div>
+                    </div>
+                </div>
+
+                <img src={require('../images/images/green-heart.png')} className='heart-separator basic-margin-updown' />
+
+                <div className='basic-padding-top'>
+                    <h3 style={{ color: colorGreen }}>
+                        LISTE DE MARIAGE
+                    </h3>
+                    <p>Nous n'avons pas créé de liste de mariage.</p>
+                    <p style={{ marginBottom: 0 }}>En revanche, si vous souhaitez nous faire un cadeau, vous pouvez participer à la cagnotte qui nous aidera à partir en voyages de noces :</p>
+                    <img src={require('../images/images/cagnotte.png')} className='event-image transition hovered basic-margin-updown' onClick={() => window.open('https://app.lyf.eu/pot/fr/b9b5ab65-b5b1-4c86-8957-0ae7906d954f')} />
+                    <p>Notre rêve : partir en Islande voir les aurores boréales !</p>
+                </div>
+
+                <img className='full-width' src={require('../images/images/islande.jpeg')} />
+            </div>
+        </div>
+    )
+}
+
+function photos() {
+    return (
+        <div id="photos" className="basic-page smallest-padding-bottom">
+            <div className='basic-padding-updown'>
+                <h1 className='dactyl'>Photos</h1>
+                <img src={require('../images/images/branche.png')} className='branche' />
+            </div>
+
+            <div className='white-page'>
+                <div className='basic-padding-updown'>
+                    <h3 style={{ color: colorGreen }}>
+                        PARTAGE DE PHOTOS
+                    </h3>
+                    <p>
+                        Section à venir
+                    </p>
+                </div>
+            </div>
+        </div>
+    )
+}
+
+export { titles, programme, mdpSection, acces, footer, hotel, reponse, dressCode, infoPratiques, photos }
