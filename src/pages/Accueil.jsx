@@ -115,15 +115,15 @@ function Accueil() {
 
                         {acces(carTextClicked, setCarTextClicked, planeTextClicked, setPlaneTextClicked, trainTextClicked, setTrainTextClicked, lastClicked)}
 
-                        {buttonGoTop(scrollToTop, showButton)}
+                        {buttonGoTop(scrollToTop, showButton, dimensions.width)}
 
-                        {hotel()}
+                        {hotel(dimensions.width)}
 
                         {reponse(adminMdpOk)}
 
                         {dressCode(dimensions.width)}
 
-                        {infoPratiques()}
+                        {infoPratiques(dimensions.width)}
 
                         {photos()}
 

@@ -230,6 +230,7 @@ li {
     color: black;
     margin: auto;
     width: 80%;
+    padding: 1%;
 }
 
 .heighted {
@@ -285,7 +286,7 @@ li {
 
 
 /* VERY LARGE SCREEN */
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 800px) {
     h1 {
         font-size: 4vw;
     }
@@ -295,7 +296,7 @@ li {
     }
 
     h3 {
-        font-size: 1.5vw;
+        font-size: 2vw;
     }
 
     p,
@@ -308,35 +309,16 @@ li {
     .heighted {
         height: 400px;
     }
-}
 
-
-
-/* LARGE SCREEN */
-@media screen and (min-width: 800px) {
-    h1 {
-        font-size: 5.5vw;
+    .white-page {
+        width: 50%;
     }
 
-    h2 {
-        font-size: 4vw;
-    }
-
-    h3 {
-        font-size: 2vw;
-    }
-
-    p,
-    strong,
-    i,
-    a {
-        font-size: 1.5vw;
-    }
-
-    .heighted {
-        height: 300px;
+    .btn-to-top {
+        right: 60px;
     }
 }
+
 
 /* SMALL SCREEN */
 @media screen and (max-width: 800px) {

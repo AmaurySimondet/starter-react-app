@@ -13,10 +13,13 @@ function titles(timeRemaining, width) {
                         { marginTop: "40%" } :
                         width < 500 ?
                             { marginTop: "20%" } :
-                            width >= 600 ?
+                            width < 800 ?
                                 { marginTop: "10%" }
                                 :
-                                {}
+                                width >= 800 ?
+                                    {}
+                                    :
+                                    {}
         }>
 
             <div className='basic-margin-updown' style={width < 400 ? { marginTop: "40%" } : {}}>
@@ -302,11 +305,11 @@ function footer() {
     )
 }
 
-function hotel() {
+function hotel(width) {
     return (
         <div id="hotel" className="basic-page section-header smallest-padding-bottom" style={{ marginTop: "0" }}>
             <div className='basic-padding-updown'>
-                <h1 className='dactyl'>Hôtel</h1>
+                <h1 className='dactyl'>Hôtels</h1>
                 <img src={require('../images/images/branche.webp')} className='branche' />
             </div>
 
@@ -316,7 +319,7 @@ function hotel() {
 
                     <img src={require('../images/images/hotels.webp')} className='full-width' />
 
-                    <div className='flex-50-50 basic-margin'>
+                    <div className='flex-50-50 basic-margin' style={width < 400 ? { columnGap: "1%" } : null}>
                         <a href="https://vu.fr/aBcR" style={{ color: colorOrange }} className='dactyl flexed-50-50 transition hovered'>
                             <h2>Booking.com </h2>
                         </a>
@@ -345,7 +348,7 @@ function hotel() {
 
                     <img src={require('../images/images/green-heart.webp')} className='heart-separator basic-margin-bottom' />
 
-                    <h2 style={{ color: colorGreen }} className='dactyl'>
+                    <h2 style={{ color: colorGreen }} className='dactyl basic-margin-bottom'>
                         Et si vous en profitiez pour découvrir Roanne ?
                     </h2>
 
@@ -356,7 +359,7 @@ function hotel() {
                         Visiter Roanne et ses halles gourmandes, flâner sur les bords de Loire, s'extasier dans les villages de caractère de Saint-Jean-Saint-Maurice-sur Loire et de Saint-Haon-le-Châtel, se prendre pour des seigneurs au Château de l'Aubépin à Fourneaux et profiter des expositions gratuites au Château de Beaulieu à Riorges, voici de quoi passer de bons moments pour ceux qui souhaitent rester sur un week-end prolongé !
                     </p>
 
-                    <div className='flex-50-50 basic-margin'>
+                    <div className='flex-50-50 basic-margin' style={width < 400 ? { columnGap: "1%" } : null}>
                         <a href="www.roannais-tourisme.com" style={{ color: colorOrange }} className='dactyl flexed-50-50 transition hovered'>
                             <h2>roannais-tourisme.com </h2>
                         </a>
@@ -471,7 +474,7 @@ function dressCode(width) {
     )
 }
 
-function infoPratiques() {
+function infoPratiques(width) {
     return (
         <div id="info-pratiques" className="basic-page smallest-padding-bottom">
             <div className='basic-padding-updown'>
@@ -484,7 +487,7 @@ function infoPratiques() {
                     <h3 style={{ color: colorGreen }}>
                         COORDONNÉES DES FUTURS MARIÉS
                     </h3>
-                    <div className='flex-50-50'>
+                    <div className='flex-50-50' style={width < 400 ? { columnGap: "1%" } : null}>
                         <div className='flexed-50-50'>
                             <strong>Floriane SIMONDET</strong>
                             <p>floriane.simondet@gmail.com</p>
@@ -505,7 +508,7 @@ function infoPratiques() {
                     <p>
                         Pour la planification de surprises, un covoiturage ou la récolte d'informations complémentaires, vous pouvez contacter nos témoins.
                     </p>
-                    <div className='flex-50-50'>
+                    <div className='flex-50-50' style={width < 400 ? { columnGap: "1%" } : null}>
                         <div className='flexed-50-50'>
                             <strong>Emeline SIMONDET</strong>
                             <p>emeline.s@ntymail.com</p>
@@ -515,7 +518,7 @@ function infoPratiques() {
                             <p>dodier.remi@gmail.com</p>
                         </div>
                     </div>
-                    <div className='flex-50-50'>
+                    <div className='flex-50-50' style={width < 400 ? { columnGap: "1%" } : null}>
                         <div className='flexed-50-50'>
                             <strong>Alexandra SCLAUNICK</strong>
                             <p>sclaunicka@gmail.com</p>
@@ -538,9 +541,8 @@ function infoPratiques() {
                     <img src={require('../images/images/cagnotte.webp')} className='event-image transition hovered basic-margin-updown' onClick={() => window.open('https://app.lyf.eu/pot/fr/b9b5ab65-b5b1-4c86-8957-0ae7906d954f')} />
                     <p>Notre rêve : partir en Islande voir les aurores boréales !</p>
                 </div>
-
-                <img className='full-width' src={require('../images/images/islande.webp')} />
             </div>
+            <img className='full-width white-page' src={require('../images/images/islande.webp')} style={{ padding: 0 }} />
         </div>
     )
 }

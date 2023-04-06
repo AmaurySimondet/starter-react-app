@@ -2,10 +2,15 @@ import { scrollTo } from '../utils/layout';
 import { colorGreen, backgroundBeige } from '../config';
 
 {/* BOUTON GO TO TOP */ }
-function buttonGoTop(scrollToTop, showButton) {
+function buttonGoTop(scrollToTop, showButton, width) {
     return (
         <div onClick={scrollToTop} className={showButton ? "btn-to-top transition not-hidden" : "btn-to-top hidden transition hidden"}>
-            <img src={require("../images/icons/arrow-up.png")}
+            <img src={
+                width < 800 ?
+                    require("../images/icons/arrow-up.png")
+                    :
+                    require("../images/icons/arrow-up.webp")
+            }
                 className='full-width' />
         </div>
     );
@@ -24,7 +29,7 @@ function navbarElements(styleUl = {}, styleP = {}) {
             </li>
             <li className="nav-item active">
                 <h3 className="navigbar-link text-navbar" onClick={scrollTo("hotel")} style={styleP}>
-                    HÔTEL</h3>
+                    HÔTELS</h3>
             </li>
             <li className="nav-item active">
                 <h3 className="navigbar-link text-navbar" onClick={scrollTo("reponse")} style={styleP}>
@@ -36,7 +41,7 @@ function navbarElements(styleUl = {}, styleP = {}) {
             </li>
             <li className="nav-item active">
                 <h3 className="navigbar-link text-navbar" onClick={scrollTo("info-pratiques")} style={styleP}>
-                    INFO PRATIQUES</h3>
+                    INFORMATIONS PRATIQUES</h3>
             </li>
             <li className="nav-item active">
                 <h3 className="navigbar-link text-navbar" onClick={scrollTo("photos")} style={styleP}>
@@ -55,33 +60,28 @@ function navbar(toggleClicked, width, onToggleClick) {
 
             <img className="logo-navbar transition" alt="logo" src={require('../images/icons/logo.webp')} onClick={scrollTo("titles")} />
 
-            {width > 800 ?
-                <div className="collapse navbar-collapse" id="navbarTogglerDemo01">
 
-                    {navbarElements()}
-                </div>
-                :
+            <div>
+                <img
+                    src={require('../images/icons/toggle-navbar.webp')}
+                    className={toggleClicked ? "toggle-navbar transition rotated" : "toggle-navbar transition not-rotated"}
+                    onClick={onToggleClick}
+                />
+
                 <div>
-                    <img
-                        src={require('../images/icons/toggle-navbar.webp')}
-                        className={toggleClicked ? "toggle-navbar transition rotated" : "toggle-navbar transition not-rotated"}
-                        onClick={onToggleClick}
-                    />
+                    <div
+                        className={toggleClicked ? "navbar-elements-container transition" : "navbar-elements-container transition hidden"}
+                        style={{ position: "absolute", top: "100%", left: "0", width: "100%", backgroundColor: "#7f8aa3", zIndex: "100", textAlign: "center", borderRadius: "0 0 40px 40px", padding: "5%" }}
+                    >
+                        <img src={require('../images/images/branche.webp')} className='branche' />
 
-                    <div>
-                        <div
-                            className={toggleClicked ? "navbar-elements-container transition" : "navbar-elements-container transition hidden"}
-                            style={{ position: "absolute", top: "100%", left: "0", width: "100%", backgroundColor: "#7f8aa3", zIndex: "100", textAlign: "center", borderRadius: "0 0 40px 40px", padding: "5%" }}
-                        >
-                            <img src={require('../images/images/branche.webp')} className='branche' />
+                        {navbarElements({ display: "grid" }, { padding: "5px" })}
 
-                            {navbarElements({ display: "grid" }, { padding: "5px" })}
-
-                            <img src={require('../images/images/branche.webp')} className='branche inverted' />
-                        </div>
+                        <img src={require('../images/images/branche.webp')} className='branche inverted' />
                     </div>
                 </div>
-            }
+            </div>
+
         </nav >
     )
 }
