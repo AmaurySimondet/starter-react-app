@@ -104,7 +104,7 @@ function Accueil() {
                 :
                 mdpOk || adminMdpOk ?
                     <div>
-                        <img className="background-image" src={require('../images/images/background-image.png')}
+                        <img className="background-image" src={require('../images/images/background-image.webp')}
                             style={dimensions.width < 800 ? { height: "100vh", width: "100vw" } : {}} />
 
                         {navbar(toggleClicked, dimensions.width, onToggleClick)}

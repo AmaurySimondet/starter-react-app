@@ -19,13 +19,13 @@ const NavigationButtons = ({ lat, lng }) => {
     return (
         <div>
             <button onClick={() => openMaps(lat, lng)} className='btn btn-light navbtn basic-margin '>
-                <img src={require('../images/icons/maps.png')} alt='Google Maps' className='full-width' />
+                <img src={require('../images/icons/maps.webp')} alt='Google Maps' className='full-width' />
             </button>
             <button onClick={() => openWaze(lat, lng)} className='btn btn-light navbtn basic-margin'>
-                <img src={require('../images/icons/waze.png')} alt='Waze' className='full-width' />
+                <img src={require('../images/icons/waze.webp')} alt='Waze' className='full-width' />
             </button>
             <button onClick={() => openAppleMaps(lat, lng)} className='btn btn-light navbtn basic-margin '>
-                <img src={require('../images/icons/apple-maps.png')} alt='Apple Maps' className='full-width' />
+                <img src={require('../images/icons/apple-maps.webp')} alt='Apple Maps' className='full-width' />
             </button >
         </div>
     );

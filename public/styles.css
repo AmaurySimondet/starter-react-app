@@ -82,7 +82,6 @@ li {
     bottom: 60px;
     right: 20px;
     z-index: 100;
-    background-color: white;
     border: none;
     border-radius: 50%;
     width: 75px;
@@ -92,7 +91,6 @@ li {
     align-items: center;
     cursor: pointer;
     transition: all 0.5s ease-in-out;
-    border: 1px solid black;
 }
 
 .event-image {

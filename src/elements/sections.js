@@ -20,14 +20,14 @@ function titles(timeRemaining, width) {
         }>
 
             <div className='basic-margin-updown' style={width < 400 ? { marginTop: "40%" } : {}}>
-                <img src={require('../images/images/branche.png')} className='branche' />
+                <img src={require('../images/images/branche.webp')} className='branche' />
 
                 <div>
                     <h2>Le mariage de</h2>
                     <h1 className='dactyl'>Floriane et Antoine</h1>
                 </div>
 
-                <img src={require('../images/images/branche.png')} className='branche inverted' />
+                <img src={require('../images/images/branche.webp')} className='branche inverted' />
             </div>
 
             <div>
@@ -66,7 +66,7 @@ function programme(width, adminMdpOk) {
             }>
             <div className='basic-padding-updown'>
                 <h1 className='dactyl'>Programme</h1>
-                <img src={require('../images/images/branche.png')} className='branche' />
+                <img src={require('../images/images/branche.webp')} className='branche' />
             </div>
 
             <div className='white-page'>
@@ -74,16 +74,20 @@ function programme(width, adminMdpOk) {
                     <h2 style={{ color: colorGreen }}>RENDEZ-VOUS LE</h2>
                     <h1 style={{ color: colorOrange }} className='dactyl'>Samedi</h1>
                     <h3>8 JUIN 2024</h3>
-                    <p style={{ color: colorLightOrange }} >Les horaires peuvent être soumis à modifications</p>
+                    {adminMdpOk ?
+                        <p style={{ color: colorLightOrange }} >Les horaires peuvent être soumis à modifications</p>
+                        :
+                        null
+                    }
                 </div>
 
                 {adminMdpOk ?
                     <div className='basic-margin-top'>
-                        {div5050("15h30", "Pot d'accueil", "accueil.png", true)}
+                        {div5050("15h30", "Pot d'accueil", "accueil.webp", true)}
                         {div5050("16h30", "Cérémonie d'engagement", "ceremonie.gif", false, { width: "85%" })}
-                        {div5050("17h30", "Vin d'honneur", "apero.svg", true)}
-                        {div5050("20h00", "Dîner", "diner.svg", false, { width: "45%" })}
-                        {div5050("23h30", "Ouverture du bal", "soiree.svg", true)}
+                        {div5050("17h30", "Vin d'honneur", "apero.webp", true)}
+                        {div5050("20h00", "Dîner", "diner.webp", false, { width: "45%" })}
+                        {div5050("23h30", "Ouverture du bal", "soiree.webp", true)}
 
                     </div>
                     :
@@ -105,7 +109,7 @@ function mdpSection(verifyMdp, setMdp, passwordWrong) {
         <div id="mdp">
             <div className="basic-page section-header smallest-padding-bottom" style={{ margin: "auto", minHeight: "100vh", display: "flex", alignItems: "center", justifyContent: "center" }}>
                 <div style={{ textAlign: "center", alignSelf: "center" }}>
-                    <img src={require('../images/images/branche.png')} className='branche' />
+                    <img src={require('../images/images/branche.webp')} className='branche' />
 
                     <h1> Mot de passe </h1>
                     <input type="password" id="mdp" name="mdp" onChange={(e) => setMdp(e.target.value)} className="form-control" style={{ width: "200px", margin: "auto" }} />
@@ -121,7 +125,7 @@ function mdpSection(verifyMdp, setMdp, passwordWrong) {
                     }
                     <br />
 
-                    <img src={require('../images/images/branche.png')} className='branche inverted' />
+                    <img src={require('../images/images/branche.webp')} className='branche inverted' />
                 </div>
             </div>
         </div>
@@ -132,7 +136,7 @@ function _carDiv(carTextClicked, setCarTextClicked, style = {}) {
     return (
         <div className='flexed-3-blocks transition' style={style}>
             <img
-                src={require('../images/images/car.png')}
+                src={require('../images/images/car.webp')}
                 className={carTextClicked ? 'block-img transition full-rotation' : 'block-img transition'}
                 onClick={() => setCarTextClicked(!carTextClicked)} />
             <div className={carTextClicked ? 'block-text heighted transition' : 'block-text no-height transition'}>
@@ -156,7 +160,7 @@ function _planeDiv(planeTextClicked, setPlaneTextClicked, style = {}) {
     return (
         <div className='flexed-3-blocks transition' style={style}>
             <img
-                src={require('../images/images/plane.png')}
+                src={require('../images/images/plane.webp')}
                 className={planeTextClicked ? 'block-img transition full-rotation' : 'block-img transition'}
                 onClick={() => setPlaneTextClicked(!planeTextClicked)} />
             <div className={planeTextClicked ? 'block-text heighted transition' : 'block-text no-height transition'}>
@@ -176,7 +180,7 @@ function _trainDiv(trainTextClicked, setTrainTextClicked, style = {}) {
     return (
         <div className='flexed-3-blocks transition' style={style}>
             <img
-                src={require('../images/images/train.png')}
+                src={require('../images/images/train.webp')}
                 className={trainTextClicked ? 'block-img transition full-rotation' : 'block-img transition'}
                 style={{ width: "22%" }}
                 onClick={() => setTrainTextClicked(!trainTextClicked)} />
@@ -203,7 +207,7 @@ function acces(carTextClicked, setCarTextClicked,
         <div id="acces" className="basic-page section-header smallest-padding-bottom" style={{ marginTop: "0" }}>
             <div className='basic-padding-updown'>
                 <h1 className='dactyl'>Accès</h1>
-                <img src={require('../images/images/branche.png')} className='branche' />
+                <img src={require('../images/images/branche.webp')} className='branche' />
             </div>
 
             <div className='white-page'>
@@ -226,47 +230,47 @@ function acces(carTextClicked, setCarTextClicked,
                 {!carTextClicked && !planeTextClicked && !trainTextClicked ?
                     <div className='flex-3-blocks'>
                         {_carDiv(carTextClicked, setCarTextClicked)}
-                        <img src={require('../images/images/green-heart.png')} className='flexed-separator ' />
+                        <img src={require('../images/images/green-heart.webp')} className='flexed-separator ' />
                         {_planeDiv(planeTextClicked, setPlaneTextClicked)}
-                        <img src={require('../images/images/green-heart.png')} className='flexed-separator ' />
+                        <img src={require('../images/images/green-heart.webp')} className='flexed-separator ' />
                         {_trainDiv(trainTextClicked, setTrainTextClicked)}
                     </div>
 
                     : lastClicked === 'car' ?
                         <div className='flex-3-blocks'>
                             {_carDiv(carTextClicked, setCarTextClicked, { width: "60%" })}
-                            <img src={require('../images/images/green-heart.png')} className='flexed-separator ' />
+                            <img src={require('../images/images/green-heart.webp')} className='flexed-separator ' />
                             {_planeDiv(planeTextClicked, setPlaneTextClicked, { width: "15%" })}
-                            <img src={require('../images/images/green-heart.png')} className='flexed-separator ' />
+                            <img src={require('../images/images/green-heart.webp')} className='flexed-separator ' />
                             {_trainDiv(trainTextClicked, setTrainTextClicked, { width: "15%" })}
                         </div>
                         : lastClicked === 'plane' ?
                             <div className='flex-3-blocks'>
                                 {_carDiv(carTextClicked, setCarTextClicked, { width: "15%" })}
-                                <img src={require('../images/images/green-heart.png')} className='flexed-separator ' />
+                                <img src={require('../images/images/green-heart.webp')} className='flexed-separator ' />
                                 {_planeDiv(planeTextClicked, setPlaneTextClicked, { width: "60%" })}
-                                <img src={require('../images/images/green-heart.png')} className='flexed-separator ' />
+                                <img src={require('../images/images/green-heart.webp')} className='flexed-separator ' />
                                 {_trainDiv(trainTextClicked, setTrainTextClicked, { width: "15%" })}
                             </div>
                             : lastClicked === 'train' ?
                                 <div className='flex-3-blocks'>
                                     {_carDiv(carTextClicked, setCarTextClicked, { width: "15%" })}
-                                    <img src={require('../images/images/green-heart.png')} className='flexed-separator ' />
+                                    <img src={require('../images/images/green-heart.webp')} className='flexed-separator ' />
                                     {_planeDiv(planeTextClicked, setPlaneTextClicked, { width: "15%" })}
-                                    <img src={require('../images/images/green-heart.png')} className='flexed-separator ' />
+                                    <img src={require('../images/images/green-heart.webp')} className='flexed-separator ' />
                                     {_trainDiv(trainTextClicked, setTrainTextClicked, { width: "60%" })}
                                 </div>
                                 :
                                 <div className='flex-3-blocks'>
                                     {_carDiv(carTextClicked, setCarTextClicked)}
-                                    <img src={require('../images/images/green-heart.png')} className='flexed-separator ' />
+                                    <img src={require('../images/images/green-heart.webp')} className='flexed-separator ' />
                                     {_planeDiv(planeTextClicked, setPlaneTextClicked)}
-                                    <img src={require('../images/images/green-heart.png')} className='flexed-separator ' />
+                                    <img src={require('../images/images/green-heart.webp')} className='flexed-separator ' />
                                     {_trainDiv(trainTextClicked, setTrainTextClicked)}
                                 </div>
                 }
 
-                <img src={require('../images/images/plan.png')} alt="plan" className='full-width' />
+                <img src={require('../images/images/plan.webp')} alt="plan" className='full-width' />
 
                 {NavigationButtons({ lat: 46.046883, lng: 4.122677 })}
 
@@ -284,7 +288,7 @@ function footer() {
             </div>
 
             <div className="basic-page section-header smallest-padding-bottom" style={{ marginTop: "0" }}>
-                <img src={require('../images/images/branche.png')} className='branche' />
+                <img src={require('../images/images/branche.webp')} className='branche' />
                 <div className='basic-padding-updown'>
                 </div>
             </div>
@@ -303,14 +307,14 @@ function hotel() {
         <div id="hotel" className="basic-page section-header smallest-padding-bottom" style={{ marginTop: "0" }}>
             <div className='basic-padding-updown'>
                 <h1 className='dactyl'>Hôtel</h1>
-                <img src={require('../images/images/branche.png')} className='branche' />
+                <img src={require('../images/images/branche.webp')} className='branche' />
             </div>
 
             <div className='white-page'>
                 <div className='basic-padding'>
                     <p>Il y a environ 250 chambres d'hôtels, gîtes et chambres d'hôtes dans un rayon de 10 min en voiture du Château</p>
 
-                    <img src={require('../images/images/hotels.png')} className='full-width' />
+                    <img src={require('../images/images/hotels.webp')} className='full-width' />
 
                     <div className='flex-50-50 basic-margin'>
                         <a href="https://vu.fr/aBcR" style={{ color: colorOrange }} className='dactyl flexed-50-50 transition hovered'>
@@ -322,7 +326,7 @@ function hotel() {
                         </a>
                     </div>
 
-                    <img src={require('../images/images/airbnb.png')} className='full-width' />
+                    <img src={require('../images/images/airbnb.webp')} className='full-width' />
 
                     <div className='flex-50-50 basic-margin'>
                         <a href="https://vu.fr/ULAE" style={{ color: colorOrange }} className='dactyl flexed-50-50 transition hovered'>
@@ -330,23 +334,23 @@ function hotel() {
                         </a>
                     </div>
 
-                    <img src={require('../images/images/green-heart.png')} className='heart-separator basic-margin-bottom' />
+                    <img src={require('../images/images/green-heart.webp')} className='heart-separator basic-margin-bottom' />
 
                     <div className='flex-50-50 basic-margin'>
-                        <img src={require('../images/images/tente.png')} className='flexed-50-50' />
+                        <img src={require('../images/images/tente.webp')} className='flexed-50-50' />
                         <p className='flexed-50-50'>
                             Le Château du Bourg propose un espace pour les tentes et un parking dédié pour les camping-cars en cas de besoin. N'hésitez pas à nous faire part de votre désir d'en profiter, le cas échéant.
                         </p>
                     </div>
 
-                    <img src={require('../images/images/green-heart.png')} className='heart-separator basic-margin-bottom' />
+                    <img src={require('../images/images/green-heart.webp')} className='heart-separator basic-margin-bottom' />
 
                     <h2 style={{ color: colorGreen }} className='dactyl'>
                         Et si vous en profitiez pour découvrir Roanne ?
                     </h2>
 
 
-                    <img src={require('../images/images/roanne.png')} style={{ width: "50%" }} className='basic-margin-bottom' />
+                    <img src={require('../images/images/roanne.webp')} style={{ width: "50%" }} className='basic-margin-bottom' />
 
                     <p>
                         Visiter Roanne et ses halles gourmandes, flâner sur les bords de Loire, s'extasier dans les villages de caractère de Saint-Jean-Saint-Maurice-sur Loire et de Saint-Haon-le-Châtel, se prendre pour des seigneurs au Château de l'Aubépin à Fourneaux et profiter des expositions gratuites au Château de Beaulieu à Riorges, voici de quoi passer de bons moments pour ceux qui souhaitent rester sur un week-end prolongé !
@@ -374,7 +378,7 @@ function reponse(adminMdpOk) {
         <div id="reponse" className="basic-page smallest-padding-bottom">
             <div className='basic-padding-updown'>
                 <h1 className='dactyl'>Réponse</h1>
-                <img src={require('../images/images/branche.png')} className='branche' />
+                <img src={require('../images/images/branche.webp')} className='branche' />
             </div>
 
             <div className='white-page'>
@@ -389,7 +393,10 @@ function reponse(adminMdpOk) {
                         :
                         <div style={{ padding: "5%" }}>
                             <p>
-                                Vous pourrez bientôt compléter ici le formulaire de réponse à notre invitation
+                                En attendant le faire part, nous vous invitons dès maintenant à penser à réserver une baby-sitter : notre mariage est sans enfants.
+                            </p>
+                            <p>
+                                Dans cette section, vous pourrez bientôt compléter ici le formulaire de réponse à notre invitation
                             </p>
                         </div>
                 }
@@ -404,7 +411,7 @@ function dressCode(width) {
         <div id="dress-code" className="basic-page smallest-padding-bottom">
             <div className='basic-padding-updown'>
                 <h1 className='dactyl'>Dress Code</h1>
-                <img src={require('../images/images/branche.png')} className='branche' />
+                <img src={require('../images/images/branche.webp')} className='branche' />
             </div>
 
             <div className='white-page'>
@@ -444,18 +451,19 @@ function dressCode(width) {
                         Nous vous proposons de venir en <u>tenue de soirée printanière.</u>
                     </p>
                     <p>
-                        Mesdames, veillez à bannir le blanc et ses déclinaisons ! Aussi, les robes/shorts trop courts sont à éviter.
+                        Pour mesdames : évitez le blanc et ses déclinaisons.
                         Prenez également en compte, dans le choix de vos souliers, que la cérémonie aura lieu sur l'herbe.
+
                     </p>
                     <p>
-                        Messieurs, privilégiez un look cravate ou nœud-papillon, et cachez vos mollets que nous ne saurions voir !
+                        Pour messieurs : la cravate ou le nœud-papillon seront appréciés.
+                        Les shorts, moins.
                     </p>
                     <p>
-                        Selon votre teint, la palette des couleurs printanières est plutôt naturelle : taupe, vert sauge, rose...
-                        Rien d'obligatoire mais en total look ou en détail coloré, nous apprécierons le clin d'oeil !
+                        En inspiration totale de votre tenue ou en détail coloré, nous apprécierons un clin d’œil à la palette des couleurs printanières de notre mariage : taupe, vert sauge, vieux rose...
                     </p>
 
-                    <img src={require('../images/images/green-heart.png')} className='heart-separator basic-margin-updown' />
+                    <img src={require('../images/images/green-heart.webp')} className='heart-separator basic-margin-updown' />
                 </div>
             </div>
 
@@ -467,8 +475,8 @@ function infoPratiques() {
     return (
         <div id="info-pratiques" className="basic-page smallest-padding-bottom">
             <div className='basic-padding-updown'>
-                <h1 className='dactyl'>Accès</h1>
-                <img src={require('../images/images/branche.png')} className='branche' />
+                <h1 className='dactyl'>Informations pratiques</h1>
+                <img src={require('../images/images/branche.webp')} className='branche' />
             </div>
 
             <div className='white-page'>
@@ -488,14 +496,14 @@ function infoPratiques() {
                     </div>
                 </div>
 
-                <img src={require('../images/images/green-heart.png')} className='heart-separator basic-margin-updown' />
+                <img src={require('../images/images/green-heart.webp')} className='heart-separator basic-margin-updown' />
 
                 <div className='basic-padding-top basic-padding-leftright'>
                     <h3 style={{ color: colorGreen }}>
                         COORDONNÉES DE NOS TÉMOINS
                     </h3>
                     <p>
-                        Pour la planification de surprises, un covoiturage ou la récole d'informations complémentaires, vous pouvez contacter nos témoins. NB : Nous ne souhaitons pas mettre de rétroprojecteur à disposition.
+                        Pour la planification de surprises, un covoiturage ou la récolte d'informations complémentaires, vous pouvez contacter nos témoins.
                     </p>
                     <div className='flex-50-50'>
                         <div className='flexed-50-50'>
@@ -519,7 +527,7 @@ function infoPratiques() {
                     </div>
                 </div>
 
-                <img src={require('../images/images/green-heart.png')} className='heart-separator basic-margin-updown' />
+                <img src={require('../images/images/green-heart.webp')} className='heart-separator basic-margin-updown' />
 
                 <div className='basic-padding-top basic-padding-leftright'>
                     <h3 style={{ color: colorGreen }}>
@@ -527,11 +535,11 @@ function infoPratiques() {
                     </h3>
                     <p>Nous n'avons pas créé de liste de mariage.</p>
                     <p style={{ marginBottom: 0 }}>En revanche, si vous souhaitez nous faire un cadeau, vous pouvez participer à la cagnotte qui nous aidera à partir en voyages de noces :</p>
-                    <img src={require('../images/images/cagnotte.png')} className='event-image transition hovered basic-margin-updown' onClick={() => window.open('https://app.lyf.eu/pot/fr/b9b5ab65-b5b1-4c86-8957-0ae7906d954f')} />
+                    <img src={require('../images/images/cagnotte.webp')} className='event-image transition hovered basic-margin-updown' onClick={() => window.open('https://app.lyf.eu/pot/fr/b9b5ab65-b5b1-4c86-8957-0ae7906d954f')} />
                     <p>Notre rêve : partir en Islande voir les aurores boréales !</p>
                 </div>
 
-                <img className='full-width' src={require('../images/images/islande.jpeg')} />
+                <img className='full-width' src={require('../images/images/islande.webp')} />
             </div>
         </div>
     )
@@ -542,7 +550,7 @@ function photos() {
         <div id="photos" className="basic-page smallest-padding-bottom">
             <div className='basic-padding-updown'>
                 <h1 className='dactyl'>Photos</h1>
-                <img src={require('../images/images/branche.png')} className='branche' />
+                <img src={require('../images/images/branche.webp')} className='branche' />
             </div>
 
             <div className='white-page'>

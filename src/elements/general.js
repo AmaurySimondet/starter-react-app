@@ -4,10 +4,10 @@ import { colorGreen, backgroundBeige } from '../config';
 {/* BOUTON GO TO TOP */ }
 function buttonGoTop(scrollToTop, showButton) {
     return (
-        <button onClick={scrollToTop} className={showButton ? "btn btn-dark btn-to-top transition not-hidden" : "btn btn-dark btn-to-top hidden transition hidden"}>
-            <img src={require("../images/icons/arrow-up.webp")}
-                style={{ width: "100%", height: "100%", filter: "invert(1)" }} />
-        </button>
+        <div onClick={scrollToTop} className={showButton ? "btn-to-top transition not-hidden" : "btn-to-top hidden transition hidden"}>
+            <img src={require("../images/icons/arrow-up.png")}
+                className='full-width' />
+        </div>
     );
 }
 
@@ -53,7 +53,7 @@ function navbar(toggleClicked, width, onToggleClick) {
                 <span className="navbar-toggler-icon"></span>
             </button>
 
-            <img className="logo-navbar transition" alt="logo" src={require('../images/icons/logo.png')} onClick={scrollTo("titles")} />
+            <img className="logo-navbar transition" alt="logo" src={require('../images/icons/logo.webp')} onClick={scrollTo("titles")} />
 
             {width > 800 ?
                 <div className="collapse navbar-collapse" id="navbarTogglerDemo01">
@@ -63,7 +63,7 @@ function navbar(toggleClicked, width, onToggleClick) {
                 :
                 <div>
                     <img
-                        src={require('../images/icons/toggle-navbar.png')}
+                        src={require('../images/icons/toggle-navbar.webp')}
                         className={toggleClicked ? "toggle-navbar transition rotated" : "toggle-navbar transition not-rotated"}
                         onClick={onToggleClick}
                     />
@@ -73,11 +73,11 @@ function navbar(toggleClicked, width, onToggleClick) {
                             className={toggleClicked ? "navbar-elements-container transition" : "navbar-elements-container transition hidden"}
                             style={{ position: "absolute", top: "100%", left: "0", width: "100%", backgroundColor: "#7f8aa3", zIndex: "100", textAlign: "center", borderRadius: "0 0 40px 40px", padding: "5%" }}
                         >
-                            <img src={require('../images/images/branche.png')} className='branche' />
+                            <img src={require('../images/images/branche.webp')} className='branche' />
 
                             {navbarElements({ display: "grid" }, { padding: "5px" })}
 
-                            <img src={require('../images/images/branche.png')} className='branche inverted' />
+                            <img src={require('../images/images/branche.webp')} className='branche inverted' />
                         </div>
                     </div>
                 </div>
