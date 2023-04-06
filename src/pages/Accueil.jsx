@@ -32,7 +32,7 @@ function Accueil() {
         var timeout = false;
         window.addEventListener('resize', function () {
             clearTimeout(timeout);;
-            timeout = setTimeout(handleResize, 200);
+            timeout = setTimeout(handleResize, 1000);
         });
     })
 

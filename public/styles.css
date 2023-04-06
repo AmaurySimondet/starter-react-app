@@ -317,6 +317,14 @@ li {
     .btn-to-top {
         right: 60px;
     }
+
+    .logo-navbar {
+        width: 8%;
+    }
+
+    .toggle-navbar {
+        width: 5%;
+    }
 }
 
 
