@@ -1,6 +1,44 @@
 import { scrollTo } from '../utils/layout';
 import { colorGreen } from '../config';
 import VisibilitySensor from 'react-visibility-sensor';
+import ProgressiveImage from 'react-progressive-graceful-image';
+
+function LoadingImage(imgName, elementClassName, elementStyle, onClickGiven, altGiven) {
+    const imgSrc = require('../images/' + imgName + '.webp');
+    const tinySrc = require('../images/' + imgName + '-tiny.webp');
+
+    const fullStyle = (loading) => {
+        if (loading) {
+            return {
+                filter: 'blur(20px)',
+                transition: 'filter 0.5s ease-in-out',
+                clipPath: 'inset(0 0 0 0)',
+                ...elementStyle
+            }
+        } else {
+            return {
+                filter: 'blur(0px)',
+                transition: 'filter 0.5s ease-in-out',
+                clipPath: '',
+                ...elementStyle
+            }
+        }
+    }
+
+    return (
+        <ProgressiveImage src={imgSrc} placeholder={tinySrc}>
+            {(src, loading) => (
+                <img
+                    src={src}
+                    style={fullStyle(loading)}
+                    className={elementClassName}
+                    onClick={onClickGiven}
+                    alt={altGiven}
+                />
+            )}
+        </ProgressiveImage>
+    )
+}
 
 {/* BOUTON GO TO TOP */ }
 function buttonGoTop(scrollToTop, showButton, width) {
@@ -59,8 +97,7 @@ function navbar(toggleClicked, width, onToggleClick) {
                 <span className="navbar-toggler-icon"></span>
             </button>
 
-            <img className="logo-navbar transition" alt="logo" src={require('../images/icons/logo.webp')} onClick={scrollTo("titles")} />
-
+            {LoadingImage("icons/logo", "logo-navbar transition", null, scrollTo("titles"), "logo")}
 
             <div>
                 <img
@@ -74,11 +111,11 @@ function navbar(toggleClicked, width, onToggleClick) {
                         className={toggleClicked ? "navbar-elements-container transition" : "navbar-elements-container transition hidden"}
                         style={{ position: "absolute", top: "100%", left: "0", width: "100%", backgroundColor: "#7f8aa3", zIndex: "100", textAlign: "center", borderRadius: "0 0 40px 40px", padding: "5%" }}
                     >
-                        <img src={require('../images/images/branche.webp')} className='branche' />
+                        {LoadingImage("images/branche", "branche", null, null, "branche")}
 
                         {navbarElements({ display: "grid" }, { padding: "5px" })}
 
-                        <img src={require('../images/images/branche.webp')} className='branche inverted' />
+                        {LoadingImage("images/branche", "branche", null, null, "branche inverted")}
                     </div>
                 </div>
             </div>
@@ -129,4 +166,4 @@ function VisibleElement(state, setter, children) {
     )
 }
 
-export { buttonGoTop, navbar, div5050, VisibleElement };
+export { buttonGoTop, navbar, div5050, VisibleElement, LoadingImage };

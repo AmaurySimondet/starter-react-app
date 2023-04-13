@@ -1,8 +1,7 @@
 import { React, useState, useEffect } from 'react';
 import { scrollToTop, updateCountdown } from '../utils/layout';
-import { buttonGoTop, navbar, VisibleElement } from '../elements/general';
+import { buttonGoTop, navbar, VisibleElement, LoadingImage } from '../elements/general';
 import { titles, programme, mdpSection, acces, footer, hotel, reponse, dressCode, infoPratiques, photos } from '../elements/sections';
-import ProgressiveImage from 'react-progressive-graceful-image';
 
 function Accueil() {
     const [showButton, setShowButton] = useState(false);
@@ -27,8 +26,6 @@ function Accueil() {
     const [dressCodeVisible, setDressCodeVisible] = useState(false);
     const [infoPratiquesVisible, setInfoPratiquesVisible] = useState(false);
     const [photosVisible, setPhotosVisible] = useState(false);
-    const bckgndImg = require('../images/images/background-image.webp');
-    const bckgndImgTiny = require('../images/images/background-image-tiny.webp');
 
     // resize
     useEffect(() => {
@@ -102,7 +99,7 @@ function Accueil() {
             setCarTextClicked(false);
             setPlaneTextClicked(false);
         }
-    }, [carTextClicked, planeTextClicked, trainTextClicked]);
+    }, [carTextClicked, planeTextClicked, trainTextClicked, lastClicked])
 
 
     return (
@@ -114,21 +111,9 @@ function Accueil() {
                 :
                 mdpOk || adminMdpOk ?
                     <div>
-                        <ProgressiveImage src={bckgndImg} placeholder={bckgndImgTiny}>
-                            {(src, loading) => (
-                                <img
-                                    src={src}
-                                    style={{
-                                        filter: loading ? 'blur(20px)' : 'blur(0px)',
-                                        transition: 'filter 0.5s ease-in-out',
-                                        height: dimensions.width < 800 ? "100vh" : "",
-                                        width: dimensions.width < 800 ? "100vw" : "",
-                                        clipPath: loading ? 'inset(0 0 0 0)' : '',
-                                    }}
-                                    className='background-image'
-                                />
-                            )}
-                        </ProgressiveImage>
+                        {LoadingImage('images/background-image', "background-image",
+                            { height: dimensions.width < 800 ? "100vh" : "", width: dimensions.width < 800 ? "100vw" : "" },
+                            null, "background-image")}
 
                         {navbar(toggleClicked, dimensions.width, onToggleClick)}
 

@@ -1,4 +1,5 @@
 import React from 'react';
+import { LoadingImage } from './general';
 
 const openMaps = (lat, lng) => {
     const url = `https://www.google.com/maps/dir/?api=1&destination=${lat},${lng}`;
@@ -19,13 +20,13 @@ const NavigationButtons = ({ lat, lng }) => {
     return (
         <div>
             <button onClick={() => openMaps(lat, lng)} className='btn btn-light navbtn basic-margin '>
-                <img src={require('../images/icons/maps.webp')} alt='Google Maps' className='full-width' />
+                {LoadingImage('icons/maps', 'full-width', null, null, "Google Maps")}
             </button>
             <button onClick={() => openWaze(lat, lng)} className='btn btn-light navbtn basic-margin'>
-                <img src={require('../images/icons/waze.webp')} alt='Waze' className='full-width' />
+                {LoadingImage('icons/waze', 'full-width', null, null, "Waze")}
             </button>
             <button onClick={() => openAppleMaps(lat, lng)} className='btn btn-light navbtn basic-margin '>
-                <img src={require('../images/icons/apple-maps.webp')} alt='Apple Maps' className='full-width' />
+                {LoadingImage('icons/apple-maps', 'full-width', null, null, "Apple Maps")}
             </button >
         </div>
     );

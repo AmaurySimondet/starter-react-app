@@ -1,5 +1,5 @@
 import { colorGreen, colorLightOrange, colorOrange } from '../config';
-import { div5050 } from './general';
+import { div5050, LoadingImage } from './general';
 import { NavigationButtons } from './navbuttons';
 
 function titles(timeRemaining, width) {
@@ -23,14 +23,14 @@ function titles(timeRemaining, width) {
         }>
 
             <div className='basic-margin-updown' style={width < 400 ? { marginTop: "40%" } : {}}>
-                <img src={require('../images/images/branche.webp')} className='branche' />
+                {LoadingImage("images/branche", "branche", null, null, "branche")}
 
                 <div>
                     <h2>Le mariage de</h2>
                     <h1 className='dactyl'>Floriane et Antoine</h1>
                 </div>
 
-                <img src={require('../images/images/branche.webp')} className='branche inverted' />
+                {LoadingImage("images/branche", "branche inverted", null, null, "branche")}
             </div>
 
             <div>
@@ -71,7 +71,7 @@ function programme(width, adminMdpOk) {
             }>
             <div className='basic-padding-updown'>
                 <h1 className='dactyl'>Programme</h1>
-                <img src={require('../images/images/branche.webp')} className='branche' />
+                {LoadingImage("images/branche", "branche", null, null, "branche")}
             </div>
 
             <div className='white-page'>
@@ -114,7 +114,7 @@ function mdpSection(verifyMdp, setMdp, passwordWrong) {
         <div id="mdp">
             <div className="basic-page section-header smallest-padding-bottom" style={{ margin: "auto", minHeight: "100vh", display: "flex", alignItems: "center", justifyContent: "center" }}>
                 <div style={{ textAlign: "center", alignSelf: "center" }}>
-                    <img src={require('../images/images/branche.webp')} className='branche' />
+                    {LoadingImage("images/branche", "branche", null, null, "branche")}
 
                     <h1> Mot de passe </h1>
                     <input type="password" id="mdp" name="mdp" onChange={(e) => setMdp(e.target.value)} className="form-control" style={{ width: "200px", margin: "auto" }} />
@@ -130,7 +130,7 @@ function mdpSection(verifyMdp, setMdp, passwordWrong) {
                     }
                     <br />
 
-                    <img src={require('../images/images/branche.webp')} className='branche inverted' />
+                    {LoadingImage("images/branche", "branche inverted", null, null, "branche")}
                 </div>
             </div>
         </div>
@@ -212,7 +212,7 @@ function acces(carTextClicked, setCarTextClicked,
         <div id="acces" className="basic-page section-header smallest-padding-bottom" style={{ marginTop: "0" }}>
             <div className='basic-padding-updown'>
                 <h1 className='dactyl'>Accès</h1>
-                <img src={require('../images/images/branche.webp')} className='branche' />
+                {LoadingImage("images/branche", "branche", null, null, "branche")}
             </div>
 
             <div className='white-page'>
@@ -235,47 +235,47 @@ function acces(carTextClicked, setCarTextClicked,
                 {!carTextClicked && !planeTextClicked && !trainTextClicked ?
                     <div className='flex-3-blocks'>
                         {_carDiv(carTextClicked, setCarTextClicked)}
-                        <img src={require('../images/images/green-heart.webp')} className='flexed-separator ' />
+                        {LoadingImage("images/green-heart", "flexed-separator", null, null, "green-heart")}
                         {_planeDiv(planeTextClicked, setPlaneTextClicked)}
-                        <img src={require('../images/images/green-heart.webp')} className='flexed-separator ' />
+                        {LoadingImage("images/green-heart", "flexed-separator", null, null, "green-heart")}
                         {_trainDiv(trainTextClicked, setTrainTextClicked)}
                     </div>
 
                     : lastClicked === 'car' ?
                         <div className='flex-3-blocks'>
                             {_carDiv(carTextClicked, setCarTextClicked, { width: "60%" })}
-                            <img src={require('../images/images/green-heart.webp')} className='flexed-separator ' />
+                            {LoadingImage("images/green-heart", "flexed-separator", null, null, "green-heart")}
                             {_planeDiv(planeTextClicked, setPlaneTextClicked, { width: "15%" })}
-                            <img src={require('../images/images/green-heart.webp')} className='flexed-separator ' />
+                            {LoadingImage("images/green-heart", "flexed-separator", null, null, "green-heart")}
                             {_trainDiv(trainTextClicked, setTrainTextClicked, { width: "15%" })}
                         </div>
                         : lastClicked === 'plane' ?
                             <div className='flex-3-blocks'>
                                 {_carDiv(carTextClicked, setCarTextClicked, { width: "15%" })}
-                                <img src={require('../images/images/green-heart.webp')} className='flexed-separator ' />
+                                {LoadingImage("images/green-heart", "flexed-separator", null, null, "green-heart")}
                                 {_planeDiv(planeTextClicked, setPlaneTextClicked, { width: "60%" })}
-                                <img src={require('../images/images/green-heart.webp')} className='flexed-separator ' />
+                                {LoadingImage("images/green-heart", "flexed-separator", null, null, "green-heart")}
                                 {_trainDiv(trainTextClicked, setTrainTextClicked, { width: "15%" })}
                             </div>
                             : lastClicked === 'train' ?
                                 <div className='flex-3-blocks'>
                                     {_carDiv(carTextClicked, setCarTextClicked, { width: "15%" })}
-                                    <img src={require('../images/images/green-heart.webp')} className='flexed-separator ' />
+                                    {LoadingImage("images/green-heart", "flexed-separator", null, null, "green-heart")}
                                     {_planeDiv(planeTextClicked, setPlaneTextClicked, { width: "15%" })}
-                                    <img src={require('../images/images/green-heart.webp')} className='flexed-separator ' />
+                                    {LoadingImage("images/green-heart", "flexed-separator", null, null, "green-heart")}
                                     {_trainDiv(trainTextClicked, setTrainTextClicked, { width: "60%" })}
                                 </div>
                                 :
                                 <div className='flex-3-blocks'>
                                     {_carDiv(carTextClicked, setCarTextClicked)}
-                                    <img src={require('../images/images/green-heart.webp')} className='flexed-separator ' />
+                                    {LoadingImage("images/green-heart", "flexed-separator", null, null, "green-heart")}
                                     {_planeDiv(planeTextClicked, setPlaneTextClicked)}
-                                    <img src={require('../images/images/green-heart.webp')} className='flexed-separator ' />
+                                    {LoadingImage("images/green-heart", "flexed-separator", null, null, "green-heart")}
                                     {_trainDiv(trainTextClicked, setTrainTextClicked)}
                                 </div>
                 }
 
-                <img src={require('../images/images/plan.webp')} alt="plan" className='full-width' />
+                {LoadingImage("images/plan", "full-width", null, null, "plan")}
 
                 {NavigationButtons({ lat: 46.046883, lng: 4.122677 })}
 
@@ -293,7 +293,7 @@ function footer() {
             </div>
 
             <div className="basic-page section-header smallest-padding-bottom" style={{ marginTop: "0" }}>
-                <img src={require('../images/images/branche.webp')} className='branche' />
+                {LoadingImage("images/branche", "branche", null, null, "branche")}
                 <div className='basic-padding-updown'>
                 </div>
             </div>
@@ -312,14 +312,14 @@ function hotel(width) {
         <div id="hotel" className="basic-page section-header smallest-padding-bottom" style={{ marginTop: "0" }}>
             <div className='basic-padding-updown'>
                 <h1 className='dactyl'>Hôtels</h1>
-                <img src={require('../images/images/branche.webp')} className='branche' />
+                {LoadingImage("images/branche", "branche", null, null, "branche")}
             </div>
 
             <div className='white-page'>
                 <div className='basic-padding'>
                     <p>Il y a environ 250 chambres d'hôtels, gîtes et chambres d'hôtes dans un rayon de 10 min en voiture du Château</p>
 
-                    <img src={require('../images/images/hotels.webp')} className='full-width' />
+                    {LoadingImage("images/hotels", "full-width", null, null, "hotels")}
 
                     <div className='flex-50-50 basic-margin' style={width < 400 ? { columnGap: "1%" } : null}>
                         <a href="https://vu.fr/aBcR" style={{ color: colorOrange }} className='dactyl flexed-50-50 transition hovered'>
@@ -331,7 +331,7 @@ function hotel(width) {
                         </a>
                     </div>
 
-                    <img src={require('../images/images/airbnb.webp')} className='full-width' />
+                    {LoadingImage("images/airbnb", "full-width", null, null, "airbnb")}
 
                     <div className='flex-50-50 basic-margin'>
                         <a href="https://vu.fr/ULAE" style={{ color: colorOrange }} className='dactyl flexed-50-50 transition hovered'>
@@ -339,23 +339,22 @@ function hotel(width) {
                         </a>
                     </div>
 
-                    <img src={require('../images/images/green-heart.webp')} className='heart-separator basic-margin-bottom' />
+                    {LoadingImage("images/green-heart", "heart-separator basic-margin-bottom", null, null, "green-heart")}
 
                     <div className='flex-50-50 basic-margin'>
-                        <img src={require('../images/images/tente.webp')} className='flexed-50-50' />
+                        {LoadingImage("images/tente", "flexed-50-50", null, null, "tente")}
                         <p className='flexed-50-50'>
                             Le Château du Bourg propose un espace pour les tentes et un parking dédié pour les camping-cars en cas de besoin. N'hésitez pas à nous faire part de votre désir d'en profiter, le cas échéant.
                         </p>
                     </div>
 
-                    <img src={require('../images/images/green-heart.webp')} className='heart-separator basic-margin-bottom' />
+                    {LoadingImage("images/green-heart", "heart-separator basic-margin-bottom", null, null, "green-heart")}
 
                     <h2 style={{ color: colorGreen }} className='dactyl basic-margin-bottom'>
                         Et si vous en profitiez pour découvrir Roanne ?
                     </h2>
 
-
-                    <img src={require('../images/images/roanne.webp')} style={{ width: "50%" }} className='basic-margin-bottom' />
+                    {LoadingImage("images/roanne", "basic-margin-bottom", { width: "50%" }, null, "roanne")}
 
                     <p>
                         Visiter Roanne et ses halles gourmandes, flâner sur les bords de Loire, s'extasier dans les villages de caractère de Saint-Jean-Saint-Maurice-sur Loire et de Saint-Haon-le-Châtel, se prendre pour des seigneurs au Château de l'Aubépin à Fourneaux et profiter des expositions gratuites au Château de Beaulieu à Riorges, voici de quoi passer de bons moments pour ceux qui souhaitent rester sur un week-end prolongé !
@@ -383,7 +382,7 @@ function reponse(adminMdpOk) {
         <div id="reponse" className="basic-page smallest-padding-bottom">
             <div className='basic-padding-updown'>
                 <h1 className='dactyl'>Réponse</h1>
-                <img src={require('../images/images/branche.webp')} className='branche' />
+                {LoadingImage("images/branche", "branche", null, null, "branche")}
             </div>
 
             <div className='white-page'>
@@ -416,7 +415,7 @@ function dressCode(width) {
         <div id="dress-code" className="basic-page smallest-padding-bottom">
             <div className='basic-padding-updown'>
                 <h1 className='dactyl'>Dress Code</h1>
-                <img src={require('../images/images/branche.webp')} className='branche' />
+                {LoadingImage("images/branche", "branche", null, null, "branche")}
             </div>
 
             <div className='white-page'>
@@ -468,7 +467,7 @@ function dressCode(width) {
                         En inspiration totale de votre tenue ou en détail coloré, nous apprécierons un clin d’œil à la palette des couleurs printanières de notre mariage : taupe, vert sauge, vieux rose...
                     </p>
 
-                    <img src={require('../images/images/green-heart.webp')} className='heart-separator basic-margin-updown' />
+                    {LoadingImage("images/green-heart", "heart-separator basic-margin-updown", null, null, "green-heart")}
                 </div>
             </div>
 
@@ -481,7 +480,7 @@ function infoPratiques(width) {
         <div id="info-pratiques" className="basic-page smallest-padding-bottom">
             <div className='basic-padding-updown'>
                 <h1 className='dactyl'>Informations pratiques</h1>
-                <img src={require('../images/images/branche.webp')} className='branche' />
+                {LoadingImage("images/branche", "branche", null, null, "branche")}
             </div>
 
             <div className='white-page'>
@@ -501,7 +500,7 @@ function infoPratiques(width) {
                     </div>
                 </div>
 
-                <img src={require('../images/images/green-heart.webp')} className='heart-separator basic-margin-updown' />
+                {LoadingImage("images/green-heart", "heart-separator basic-margin-updown", null, null, "green-heart")}
 
                 <div className='basic-padding-top basic-padding-leftright'>
                     <h3 style={{ color: colorGreen }}>
@@ -532,7 +531,7 @@ function infoPratiques(width) {
                     </div>
                 </div>
 
-                <img src={require('../images/images/green-heart.webp')} className='heart-separator basic-margin-updown' />
+                {LoadingImage("images/green-heart", "heart-separator basic-margin-updown", null, null, "green-heart")}
 
                 <div className='basic-padding-top basic-padding-leftright'>
                     <h3 style={{ color: colorGreen }}>
@@ -540,11 +539,11 @@ function infoPratiques(width) {
                     </h3>
                     <p>Nous n'avons pas créé de liste de mariage.</p>
                     <p style={{ marginBottom: 0 }}>En revanche, si vous souhaitez nous faire un cadeau, vous pouvez participer à la cagnotte qui nous aidera à partir en voyages de noces :</p>
-                    <img src={require('../images/images/cagnotte.webp')} className='event-image transition hovered basic-margin-updown' onClick={() => window.open('https://app.lyf.eu/pot/fr/b9b5ab65-b5b1-4c86-8957-0ae7906d954f')} />
+                    {LoadingImage("images/cagnotte", "event-image transition hovered basic-margin-updown", null, () => window.open('https://app.lyf.eu/pot/fr/b9b5ab65-b5b1-4c86-8957-0ae7906d954f'), "cagnotte")}
                     <p>Notre rêve : partir en Islande voir les aurores boréales !</p>
                 </div>
             </div>
-            <img className='full-width white-page' src={require('../images/images/islande.webp')} style={{ padding: 0 }} />
+            {LoadingImage("images/islande", "full-width white-page", { padding: 0 }, null, "islande")}
         </div>
     )
 }
@@ -554,7 +553,7 @@ function photos() {
         <div id="photos" className="basic-page smallest-padding-bottom">
             <div className='basic-padding-updown'>
                 <h1 className='dactyl'>Photos</h1>
-                <img src={require('../images/images/branche.webp')} className='branche' />
+                {LoadingImage("images/branche", "branche", null, null, "branche")}
             </div>
 
             <div className='white-page'>
