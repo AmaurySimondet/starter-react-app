@@ -1,7 +1,8 @@
 import { React, useState, useEffect } from 'react';
 import { scrollToTop, updateCountdown } from '../utils/layout';
-import { buttonGoTop, navbar } from '../elements/general';
+import { buttonGoTop, navbar, VisibleElement } from '../elements/general';
 import { titles, programme, mdpSection, acces, footer, hotel, reponse, dressCode, infoPratiques, photos } from '../elements/sections';
+import ProgressiveImage from 'react-progressive-graceful-image';
 
 function Accueil() {
     const [showButton, setShowButton] = useState(false);
@@ -19,6 +20,15 @@ function Accueil() {
     const [trainTextClicked, setTrainTextClicked] = useState(false);
     const [lastClicked, setLastClicked] = useState('');
     const [passwordWrong, setPasswordWrong] = useState(false);
+    const [programmeVisible, setProgrammeVisible] = useState(false);
+    const [accesVisible, setAccesVisible] = useState(false);
+    const [hotelVisible, setHotelVisible] = useState(false);
+    const [reponseVisible, setReponseVisible] = useState(false);
+    const [dressCodeVisible, setDressCodeVisible] = useState(false);
+    const [infoPratiquesVisible, setInfoPratiquesVisible] = useState(false);
+    const [photosVisible, setPhotosVisible] = useState(false);
+    const bckgndImg = require('../images/images/background-image.webp');
+    const bckgndImgTiny = require('../images/images/background-image-tiny.webp');
 
     // resize
     useEffect(() => {
@@ -104,30 +114,43 @@ function Accueil() {
                 :
                 mdpOk || adminMdpOk ?
                     <div>
-                        <img className="background-image" src={require('../images/images/background-image.webp')}
-                            style={dimensions.width < 800 ? { height: "100vh", width: "100vw" } : {}} />
+                        <ProgressiveImage src={bckgndImg} placeholder={bckgndImgTiny}>
+                            {(src, loading) => (
+                                <img
+                                    src={src}
+                                    style={{
+                                        filter: loading ? 'blur(20px)' : 'blur(0px)',
+                                        transition: 'filter 0.5s ease-in-out',
+                                        height: dimensions.width < 800 ? "100vh" : "",
+                                        width: dimensions.width < 800 ? "100vw" : "",
+                                        clipPath: loading ? 'inset(0 0 0 0)' : '',
+                                    }}
+                                    className='background-image'
+                                />
+                            )}
+                        </ProgressiveImage>
 
                         {navbar(toggleClicked, dimensions.width, onToggleClick)}
 
                         {titles(timeRemaining, dimensions.width)}
 
-                        {programme(dimensions.width, adminMdpOk)}
+                        {VisibleElement(programmeVisible, setProgrammeVisible, programme(dimensions.width, adminMdpOk))}
 
-                        {acces(carTextClicked, setCarTextClicked, planeTextClicked, setPlaneTextClicked, trainTextClicked, setTrainTextClicked, lastClicked)}
+                        {VisibleElement(accesVisible, setAccesVisible, acces(carTextClicked, setCarTextClicked, planeTextClicked, setPlaneTextClicked, trainTextClicked, setTrainTextClicked, lastClicked))}
 
-                        {buttonGoTop(scrollToTop, showButton, dimensions.width)}
+                        {VisibleElement(hotelVisible, setHotelVisible, hotel(dimensions.width))}
 
-                        {hotel(dimensions.width)}
+                        {VisibleElement(reponseVisible, setReponseVisible, reponse(adminMdpOk))}
 
-                        {reponse(adminMdpOk)}
+                        {VisibleElement(dressCodeVisible, setDressCodeVisible, dressCode(dimensions.width))}
 
-                        {dressCode(dimensions.width)}
+                        {VisibleElement(infoPratiquesVisible, setInfoPratiquesVisible, infoPratiques(dimensions.width))}
 
-                        {infoPratiques(dimensions.width)}
-
-                        {photos()}
+                        {VisibleElement(photosVisible, setPhotosVisible, photos())}
 
                         {footer()}
+
+                        {buttonGoTop(scrollToTop, showButton, dimensions.width)}
                     </div >
                     :
                     {}

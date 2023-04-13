@@ -46,26 +46,28 @@ function programme(width, adminMdpOk) {
         <div id="programme" className="basic-page section-header smallest-padding-bottom"
             style={
                 width < 200 ?
-                    { marginTop: "310%" } :
-                    width < 300 ?
-                        { marginTop: "210%" } :
-                        width < 400 ?
-                            { marginTop: "130%" } :
-                            width < 500 ?
-                                { marginTop: "110%" } :
-                                width < 600 ?
-                                    { marginTop: "70%" }
-                                    :
-                                    width < 700 ?
-                                        { marginTop: "50%" }
+                    { marginTop: "350%" } :
+                    width < 250 ?
+                        { marginTop: "220%" } :
+                        width < 300 ?
+                            { marginTop: "180%" } :
+                            width < 400 ?
+                                { marginTop: "140%" } :
+                                width < 500 ?
+                                    { marginTop: "110%" } :
+                                    width < 600 ?
+                                        { marginTop: "70%" }
                                         :
-                                        width < 800 ?
-                                            { marginTop: "40%" }
+                                        width < 700 ?
+                                            { marginTop: "50%" }
                                             :
-                                            width >= 800 ?
-                                                { marginTop: "60%" }
+                                            width < 800 ?
+                                                { marginTop: "40%" }
                                                 :
-                                                {}
+                                                width >= 800 ?
+                                                    { marginTop: "60%" }
+                                                    :
+                                                    {}
             }>
             <div className='basic-padding-updown'>
                 <h1 className='dactyl'>Programme</h1>

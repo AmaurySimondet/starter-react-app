@@ -1,5 +1,6 @@
 import { scrollTo } from '../utils/layout';
-import { colorGreen, backgroundBeige } from '../config';
+import { colorGreen } from '../config';
+import VisibilitySensor from 'react-visibility-sensor';
 
 {/* BOUTON GO TO TOP */ }
 function buttonGoTop(scrollToTop, showButton, width) {
@@ -114,4 +115,18 @@ function div5050(hour, event, imageUrl, naturalOrder, imageStyle) {
     }
 }
 
-export { buttonGoTop, navbar, div5050 };
+function VisibleElement(state, setter, children) {
+    return (
+        <VisibilitySensor
+            partialVisibility={true}
+            onChange={(isVisible) => {
+                setter(isVisible);
+            }}>
+            <div style={{ opacity: state ? 1 : 0.01, transition: 'opacity 0.7s ease-in-out' }}>
+                {children}
+            </div>
+        </VisibilitySensor>
+    )
+}
+
+export { buttonGoTop, navbar, div5050, VisibleElement };
