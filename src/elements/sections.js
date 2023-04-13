@@ -400,7 +400,9 @@ function reponse(adminMdpOk) {
                                 En attendant le faire part, nous vous invitons dès maintenant à penser à réserver une baby-sitter : notre mariage est sans enfants.
                             </p>
                             <p>
-                                Dans cette section, vous pourrez bientôt compléter ici le formulaire de réponse à notre invitation
+                                Aussi, vous pourrez bientôt compléter ici le formulaire de réponse à notre invitation.
+                                <br />
+                                Si vous savez d'ores et déjà que vous êtes surs d'être avec nous, vous pouvez nous le dire sans attendre !
                             </p>
                         </div>
                 }
