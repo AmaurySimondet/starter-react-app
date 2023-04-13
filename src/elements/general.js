@@ -156,6 +156,7 @@ function VisibleElement(state, setter, children) {
     return (
         <VisibilitySensor
             partialVisibility={true}
+            offset={{ top: 100, bottom: 100 }}
             onChange={(isVisible) => {
                 setter(isVisible);
             }}>
