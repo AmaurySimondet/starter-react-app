@@ -361,11 +361,11 @@ function hotel(width) {
                     </p>
 
                     <div className='flex-50-50 basic-margin' style={width < 400 ? { columnGap: "1%" } : null}>
-                        <a href="www.roannais-tourisme.com" style={{ color: colorOrange }} className='dactyl flexed-50-50 transition hovered'>
+                        <a href="https://www.roannais-tourisme.com" style={{ color: colorOrange }} className='dactyl flexed-50-50 transition hovered'>
                             <h2>roannais-tourisme.com </h2>
                         </a>
 
-                        <a href="www.instagram.com/villederoanne" style={{ color: colorOrange }} className='dactyl flexed-50-50 transition hovered'>
+                        <a href="https://www.instagram.com/villederoanne" style={{ color: colorOrange }} className='dactyl flexed-50-50 transition hovered'>
                             <h2>Instagram</h2>
                         </a>
                     </div>
@@ -541,7 +541,7 @@ function infoPratiques(width) {
                     </h3>
                     <p>Nous n'avons pas créé de liste de mariage.</p>
                     <p style={{ marginBottom: 0 }}>En revanche, si vous souhaitez nous faire un cadeau, vous pouvez participer à la cagnotte qui nous aidera à partir en voyages de noces :</p>
-                    {LoadingImage("images/cagnotte", "event-image transition hovered basic-margin-updown", null, () => window.open('https://app.lyf.eu/pot/fr/b9b5ab65-b5b1-4c86-8957-0ae7906d954f'), "cagnotte")}
+                    {LoadingImage("images/cagnotte", "event-image hovered basic-margin-updown", null, () => window.open('https://app.lyf.eu/pot/fr/b9b5ab65-b5b1-4c86-8957-0ae7906d954f'), "cagnotte")}
                     <p>Notre rêve : partir en Islande voir les aurores boréales !</p>
                 </div>
             </div>

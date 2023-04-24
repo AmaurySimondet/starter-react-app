@@ -11,14 +11,14 @@ function LoadingImage(imgName, elementClassName, elementStyle, onClickGiven, alt
         if (loading) {
             return {
                 filter: 'blur(20px)',
-                transition: 'filter 0.5s ease-in-out',
+                transition: 'all 0.5s ease-in-out',
                 clipPath: 'inset(0 0 0 0)',
                 ...elementStyle
             }
         } else {
             return {
                 filter: 'blur(0px)',
-                transition: 'filter 0.5s ease-in-out',
+                transition: 'all 0.5s ease-in-out',
                 clipPath: '',
                 ...elementStyle
             }
@@ -97,7 +97,7 @@ function navbar(toggleClicked, width, onToggleClick) {
                 <span className="navbar-toggler-icon"></span>
             </button>
 
-            {LoadingImage("icons/logo", "logo-navbar transition", null, scrollTo("titles"), "logo")}
+            {LoadingImage("icons/logo", "logo-navbar", null, scrollTo("titles"), "logo")}
 
             <div>
                 <img
