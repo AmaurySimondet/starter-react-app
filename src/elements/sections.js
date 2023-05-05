@@ -485,7 +485,7 @@ function infoPratiques(width) {
                 {LoadingImage("images/branche", "branche", null, null, "branche")}
             </div>
 
-            <div className='white-page'>
+            <div className='white-page' style={{ borderRadius: "3% 3% 0 0" }}>
                 <div className='basic-padding-top basic-padding-leftright'>
                     <h3 style={{ color: colorGreen }}>
                         COORDONNÉES DES FUTURS MARIÉS
@@ -545,7 +545,8 @@ function infoPratiques(width) {
                     <p>Notre rêve : partir en Islande voir les aurores boréales !</p>
                 </div>
             </div>
-            {LoadingImage("images/islande", "full-width white-page", { padding: 0 }, null, "islande")}
+
+            {LoadingImage("images/islande", "full-width white-page", { padding: 0, borderRadius: "0 0 3% 3%" }, null, "islande")}
         </div>
     )
 }

@@ -11,14 +11,14 @@ function LoadingImage(imgName, elementClassName, elementStyle, onClickGiven, alt
         if (loading) {
             return {
                 filter: 'blur(20px)',
-                transition: 'all 0.5s ease-in-out',
+                transition: 'all 0.1s ease-in-out',
                 clipPath: 'inset(0 0 0 0)',
                 ...elementStyle
             }
         } else {
             return {
                 filter: 'blur(0px)',
-                transition: 'all 0.5s ease-in-out',
+                transition: 'all 0.1s ease-in-out',
                 clipPath: '',
                 ...elementStyle
             }
@@ -160,7 +160,7 @@ function VisibleElement(state, setter, children) {
             onChange={(isVisible) => {
                 setter(isVisible);
             }}>
-            <div style={{ opacity: state ? 1 : 0.01, transition: 'opacity 0.7s ease-in-out' }}>
+            <div style={{ opacity: state ? 1 : 0.01, transition: 'opacity 0.5s ease-in-out' }}>
                 {children}
             </div>
         </VisibilitySensor>
