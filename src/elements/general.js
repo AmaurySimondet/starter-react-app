@@ -1,5 +1,5 @@
 import { scrollTo } from '../utils/layout';
-import { colorGreen } from '../config';
+import { eucalyptusGreen } from '../config';
 import VisibilitySensor from 'react-visibility-sensor';
 import ProgressiveImage from 'react-progressive-graceful-image';
 
@@ -111,11 +111,11 @@ function navbar(toggleClicked, width, onToggleClick) {
                         className={toggleClicked ? "navbar-elements-container transition" : "navbar-elements-container transition hidden"}
                         style={{ position: "absolute", top: "100%", left: "0", width: "100%", backgroundColor: "#7f8aa3", zIndex: "100", textAlign: "center", borderRadius: "0 0 40px 40px", padding: "5%" }}
                     >
-                        {LoadingImage("images/branche", "branche", null, null, "branche")}
+                        {LoadingImage("images/branche2", "branche", null, null, "branche")}
 
                         {navbarElements({ display: "grid" }, { padding: "5px" })}
 
-                        {LoadingImage("images/branche", "branche", null, null, "branche inverted")}
+                        {LoadingImage("images/branche2", "branche", null, null, "branche inverted")}
                     </div>
                 </div>
             </div>
@@ -129,7 +129,7 @@ function div5050(hour, event, imageUrl, naturalOrder, imageStyle) {
         return (
             <div className='flex-50-50 basic-padding-bottom'>
                 <div className='flexed-50-50'>
-                    <h2 style={{ color: colorGreen }} className="dactyl">{hour}</h2>
+                    <h2 style={{ color: eucalyptusGreen }} className="dactyl">{hour}</h2>
                     <h3>{event}</h3>
                 </div>
                 <div className='flexed-50-50'>
@@ -144,7 +144,7 @@ function div5050(hour, event, imageUrl, naturalOrder, imageStyle) {
                     <img className="event-image" style={imageStyle} src={require('../images/images/' + imageUrl)} />
                 </div>
                 <div className='flexed-50-50'>
-                    <h2 style={{ color: colorGreen }} className="dactyl">{hour}</h2>
+                    <h2 style={{ color: eucalyptusGreen }} className="dactyl">{hour}</h2>
                     <h3>{event}</h3>
                 </div>
             </div>

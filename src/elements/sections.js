@@ -1,4 +1,4 @@
-import { colorGreen, colorLightOrange, colorOrange } from '../config';
+import { eucalyptusGreen, colorLightOrange, colorOrange, desertRose, japaneseGarden } from '../config';
 import { div5050, LoadingImage } from './general';
 import { NavigationButtons } from './navbuttons';
 
@@ -23,14 +23,14 @@ function titles(timeRemaining, width) {
         }>
 
             <div className='basic-margin-updown' style={width < 400 ? { marginTop: "40%" } : {}}>
-                {LoadingImage("images/branche", "branche", null, null, "branche")}
+                {LoadingImage("images/branche2", "branche", null, null, "branche")}
 
                 <div>
                     <h2>Le mariage de</h2>
                     <h1 className='dactyl'>Floriane et Antoine</h1>
                 </div>
 
-                {LoadingImage("images/branche", "branche inverted", null, null, "branche")}
+                {LoadingImage("images/branche2", "branche inverted", null, null, "branche")}
             </div>
 
             <div>
@@ -71,12 +71,12 @@ function programme(width, adminMdpOk) {
             }>
             <div className='basic-padding-updown'>
                 <h1 className='dactyl'>Programme</h1>
-                {LoadingImage("images/branche", "branche", null, null, "branche")}
+                {LoadingImage("images/branche2", "branche", null, null, "branche")}
             </div>
 
             <div className='white-page'>
                 <div className='basic-padding-top'>
-                    <h2 style={{ color: colorGreen }}>RENDEZ-VOUS LE</h2>
+                    <h2 style={{ color: eucalyptusGreen }}>RENDEZ-VOUS LE</h2>
                     <h1 style={{ color: colorOrange }} className='dactyl'>Samedi</h1>
                     <h3>8 JUIN 2024</h3>
                     {adminMdpOk ?
@@ -114,7 +114,7 @@ function mdpSection(verifyMdp, setMdp, passwordWrong) {
         <div id="mdp">
             <div className="basic-page section-header smallest-padding-bottom" style={{ margin: "auto", minHeight: "100vh", display: "flex", alignItems: "center", justifyContent: "center" }}>
                 <div style={{ textAlign: "center", alignSelf: "center" }}>
-                    {LoadingImage("images/branche", "branche", null, null, "branche")}
+                    {LoadingImage("images/branche2", "branche", null, null, "branche")}
 
                     <h1> Mot de passe </h1>
                     <input type="password" id="mdp" name="mdp" onChange={(e) => setMdp(e.target.value)} className="form-control" style={{ width: "200px", margin: "auto" }} />
@@ -130,7 +130,7 @@ function mdpSection(verifyMdp, setMdp, passwordWrong) {
                     }
                     <br />
 
-                    {LoadingImage("images/branche", "branche inverted", null, null, "branche")}
+                    {LoadingImage("images/branche2", "branche inverted", null, null, "branche")}
                 </div>
             </div>
         </div>
@@ -212,12 +212,12 @@ function acces(carTextClicked, setCarTextClicked,
         <div id="acces" className="basic-page section-header smallest-padding-bottom" style={{ marginTop: "0" }}>
             <div className='basic-padding-updown'>
                 <h1 className='dactyl'>Accès</h1>
-                {LoadingImage("images/branche", "branche", null, null, "branche")}
+                {LoadingImage("images/branche2", "branche", null, null, "branche")}
             </div>
 
             <div className='white-page'>
                 <div className='basic-padding-top'>
-                    <h2 style={{ color: colorGreen }}>RENDEZ-VOUS AU</h2>
+                    <h2 style={{ color: eucalyptusGreen }}>RENDEZ-VOUS AU</h2>
                     <h1 style={{ color: colorOrange }} className='dactyl'>Château du Bourg</h1>
                     <h3>1552 chemin du Bourg</h3>
                     <h3>42120 Perreux</h3>
@@ -293,7 +293,7 @@ function footer() {
             </div>
 
             <div className="basic-page section-header smallest-padding-bottom" style={{ marginTop: "0" }}>
-                {LoadingImage("images/branche", "branche", null, null, "branche")}
+                {LoadingImage("images/branche2", "branche", null, null, "branche")}
                 <div className='basic-padding-updown'>
                 </div>
             </div>
@@ -312,7 +312,7 @@ function hotel(width) {
         <div id="hotel" className="basic-page section-header smallest-padding-bottom" style={{ marginTop: "0" }}>
             <div className='basic-padding-updown'>
                 <h1 className='dactyl'>Hôtels</h1>
-                {LoadingImage("images/branche", "branche", null, null, "branche")}
+                {LoadingImage("images/branche2", "branche", null, null, "branche")}
             </div>
 
             <div className='white-page'>
@@ -350,7 +350,7 @@ function hotel(width) {
 
                     {LoadingImage("images/green-heart", "heart-separator basic-margin-bottom", null, null, "green-heart")}
 
-                    <h2 style={{ color: colorGreen }} className='dactyl basic-margin-bottom'>
+                    <h2 style={{ color: eucalyptusGreen }} className='dactyl basic-margin-bottom'>
                         Et si vous en profitiez pour découvrir Roanne ?
                     </h2>
 
@@ -382,7 +382,7 @@ function reponse(adminMdpOk) {
         <div id="reponse" className="basic-page smallest-padding-bottom">
             <div className='basic-padding-updown'>
                 <h1 className='dactyl'>Réponse</h1>
-                {LoadingImage("images/branche", "branche", null, null, "branche")}
+                {LoadingImage("images/branche2", "branche", null, null, "branche")}
             </div>
 
             <div className='white-page'>
@@ -390,7 +390,7 @@ function reponse(adminMdpOk) {
                     adminMdpOk ?
                         <div className='basic-padding-updown'>
                             <p>Cliquez ci-dessous pour compléter le formulaire de réponse :</p>
-                            <a href="https://forms.gle/bXF6xAeHF97PzTo99" style={{ color: colorGreen }} >
+                            <a href="https://forms.gle/bXF6xAeHF97PzTo99" style={{ color: eucalyptusGreen }} >
                                 <h2 className='dactyl transition hovered'> Google Form </h2>
                             </a>
                         </div>
@@ -417,7 +417,7 @@ function dressCode(width) {
         <div id="dress-code" className="basic-page smallest-padding-bottom">
             <div className='basic-padding-updown'>
                 <h1 className='dactyl'>Dress Code</h1>
-                {LoadingImage("images/branche", "branche", null, null, "branche")}
+                {LoadingImage("images/branche2", "branche", null, null, "branche")}
             </div>
 
             <div className='white-page'>
@@ -433,24 +433,24 @@ function dressCode(width) {
                             style={width < 600 ? { width: "25px", height: "25px", backgroundColor: "#c5856d" } : { width: "50px", height: "50px", backgroundColor: "#c5856d" }}></div>
                         <div
                             className="circle transition big-hovered"
-                            onClick={() => document.body.style.backgroundColor = "#d0b084"}
-                            style={width < 600 ? { width: "25px", height: "25px", backgroundColor: "#d0b084" } : { width: "50px", height: "50px", backgroundColor: "#d0b084" }}></div>
+                            onClick={() => document.body.style.backgroundColor = colorLightOrange}
+                            style={width < 600 ? { width: "25px", height: "25px", backgroundColor: colorLightOrange } : { width: "50px", height: "50px", backgroundColor: colorLightOrange }}></div>
                         <div
                             className="circle transition big-hovered"
-                            onClick={() => document.body.style.backgroundColor = "#689d71"}
-                            style={width < 600 ? { width: "25px", height: "25px", backgroundColor: "#689d71" } : { width: "50px", height: "50px", backgroundColor: "#689d71" }}></div>
+                            onClick={() => document.body.style.backgroundColor = eucalyptusGreen}
+                            style={width < 600 ? { width: "25px", height: "25px", backgroundColor: eucalyptusGreen } : { width: "50px", height: "50px", backgroundColor: eucalyptusGreen }}></div>
                         <div
                             className="circle transition big-hovered"
-                            onClick={() => document.body.style.backgroundColor = "#89cd95"}
-                            style={width < 600 ? { width: "25px", height: "25px", backgroundColor: "#89cd95" } : { width: "50px", height: "50px", backgroundColor: "#89cd95" }}></div>
+                            onClick={() => document.body.style.backgroundColor = japaneseGarden}
+                            style={width < 600 ? { width: "25px", height: "25px", backgroundColor: japaneseGarden } : { width: "50px", height: "50px", backgroundColor: japaneseGarden }}></div>
                         <div
                             className="circle transition big-hovered"
                             onClick={() => document.body.style.backgroundColor = "#cfa89b"}
                             style={width < 600 ? { width: "25px", height: "25px", backgroundColor: "#cfa89b" } : { width: "50px", height: "50px", backgroundColor: "#cfa89b" }}></div>
                         <div
                             className="circle transition big-hovered"
-                            onClick={() => document.body.style.backgroundColor = "#c56c87"}
-                            style={width < 600 ? { width: "25px", height: "25px", backgroundColor: "#c56c87" } : { width: "50px", height: "50px", backgroundColor: "#c56c87" }}></div>
+                            onClick={() => document.body.style.backgroundColor = desertRose}
+                            style={width < 600 ? { width: "25px", height: "25px", backgroundColor: desertRose } : { width: "50px", height: "50px", backgroundColor: desertRose }}></div>
                     </div>
 
                     <p>
@@ -482,12 +482,12 @@ function infoPratiques(width) {
         <div id="info-pratiques" className="basic-page smallest-padding-bottom">
             <div className='basic-padding-updown'>
                 <h1 className='dactyl'>Informations pratiques</h1>
-                {LoadingImage("images/branche", "branche", null, null, "branche")}
+                {LoadingImage("images/branche2", "branche", null, null, "branche")}
             </div>
 
             <div className='white-page' style={{ borderRadius: "3% 3% 0 0" }}>
                 <div className='basic-padding-top basic-padding-leftright'>
-                    <h3 style={{ color: colorGreen }}>
+                    <h3 style={{ color: eucalyptusGreen }}>
                         COORDONNÉES DES FUTURS MARIÉS
                     </h3>
                     <div className='flex-50-50' style={width < 400 ? { columnGap: "1%" } : null}>
@@ -505,7 +505,7 @@ function infoPratiques(width) {
                 {LoadingImage("images/green-heart", "heart-separator basic-margin-updown", null, null, "green-heart")}
 
                 <div className='basic-padding-top basic-padding-leftright'>
-                    <h3 style={{ color: colorGreen }}>
+                    <h3 style={{ color: eucalyptusGreen }}>
                         COORDONNÉES DE NOS TÉMOINS
                     </h3>
                     <p>
@@ -536,7 +536,7 @@ function infoPratiques(width) {
                 {LoadingImage("images/green-heart", "heart-separator basic-margin-updown", null, null, "green-heart")}
 
                 <div className='basic-padding-top basic-padding-leftright'>
-                    <h3 style={{ color: colorGreen }}>
+                    <h3 style={{ color: eucalyptusGreen }}>
                         LISTE DE MARIAGE
                     </h3>
                     <p>Nous n'avons pas créé de liste de mariage.</p>
@@ -556,12 +556,12 @@ function photos() {
         <div id="photos" className="basic-page smallest-padding-bottom">
             <div className='basic-padding-updown'>
                 <h1 className='dactyl'>Photos</h1>
-                {LoadingImage("images/branche", "branche", null, null, "branche")}
+                {LoadingImage("images/branche2", "branche", null, null, "branche")}
             </div>
 
             <div className='white-page'>
                 <div className='basic-padding-updown'>
-                    <h3 style={{ color: colorGreen }}>
+                    <h3 style={{ color: eucalyptusGreen }}>
                         PARTAGE DE PHOTOS
                     </h3>
                     <p>

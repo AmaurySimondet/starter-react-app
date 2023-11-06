@@ -65,7 +65,9 @@ function Accueil() {
     // password
     function verifyMdp() {
         if (mdp === process.env.REACT_APP_MDP) {
-            setMdpOk(true);
+            // All on admin
+            setAdminMdpOk(true);
+            // setMdpOk(true);
         }
         if (mdp === process.env.REACT_APP_ADMIN_MDP) {
             setAdminMdpOk(true);

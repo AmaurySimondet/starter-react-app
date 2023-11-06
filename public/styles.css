@@ -1,6 +1,6 @@
 body {
     color: white;
-    font-family: 'Quicksand', sans-serif;
+    font-family: 'bauer_bodoni_std_1roman', sans-serif;
     background-color: rgb(207, 168, 155);
     transition: all 0.5s ease-in-out;
 }
@@ -18,7 +18,7 @@ li {
 }
 
 .dactyl {
-    font-family: 'Great Vibes', cursive;
+    font-family: 'jellyka_western_princessRg', cursive;
 }
 
 .navbtn {
@@ -34,7 +34,7 @@ li {
 }
 
 .branche {
-    width: 20%;
+    width: 15%;
 }
 
 .block-img {
