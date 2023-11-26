@@ -79,20 +79,14 @@ function programme(width, adminMdpOk) {
                     <h2 style={{ color: eucalyptusGreen }}>RENDEZ-VOUS LE</h2>
                     <h1 style={{ color: colorOrange }} className='dactyl'>Samedi</h1>
                     <h3>8 JUIN 2024</h3>
-                    {adminMdpOk ?
-                        <p style={{ color: colorLightOrange }} >Les horaires peuvent être soumis à modifications</p>
-                        :
-                        null
-                    }
                 </div>
 
                 {adminMdpOk ?
                     <div className='basic-margin-top'>
-                        {div5050("15h30", "Pot d'accueil", "accueil.webp", true)}
-                        {div5050("16h30", "Cérémonie d'engagement", "ceremonie.gif", false, { width: "85%" })}
-                        {div5050("17h30", "Vin d'honneur", "apero.webp", true)}
-                        {div5050("20h00", "Dîner", "diner.webp", false, { width: "45%" })}
-                        {div5050("23h30", "Ouverture du bal", "soiree.webp", true)}
+                        {div5050("16h00", "Cérémonie d'engagement", "ceremonie.gif", false, { width: "85%" })}
+                        {div5050("18h15", "Vin d'honneur", "apero.webp", true)}
+                        {div5050("21h00", "Dîner", "diner.webp", false, { width: "45%" })}
+                        {div5050("23h55", "Ouverture du bal", "soiree.webp", true)}
 
                     </div>
                     :
@@ -235,42 +229,42 @@ function acces(carTextClicked, setCarTextClicked,
                 {!carTextClicked && !planeTextClicked && !trainTextClicked ?
                     <div className='flex-3-blocks'>
                         {_carDiv(carTextClicked, setCarTextClicked)}
-                        {LoadingImage("images/green-heart", "flexed-separator", null, null, "green-heart")}
+                        {LoadingImage("images/green-heart2", "flexed-separator", null, null, "green-heart2")}
                         {_planeDiv(planeTextClicked, setPlaneTextClicked)}
-                        {LoadingImage("images/green-heart", "flexed-separator", null, null, "green-heart")}
+                        {LoadingImage("images/green-heart2", "flexed-separator", null, null, "green-heart2")}
                         {_trainDiv(trainTextClicked, setTrainTextClicked)}
                     </div>
 
                     : lastClicked === 'car' ?
                         <div className='flex-3-blocks'>
                             {_carDiv(carTextClicked, setCarTextClicked, { width: "60%" })}
-                            {LoadingImage("images/green-heart", "flexed-separator", null, null, "green-heart")}
+                            {LoadingImage("images/green-heart2", "flexed-separator", null, null, "green-heart2")}
                             {_planeDiv(planeTextClicked, setPlaneTextClicked, { width: "15%" })}
-                            {LoadingImage("images/green-heart", "flexed-separator", null, null, "green-heart")}
+                            {LoadingImage("images/green-heart2", "flexed-separator", null, null, "green-heart2")}
                             {_trainDiv(trainTextClicked, setTrainTextClicked, { width: "15%" })}
                         </div>
                         : lastClicked === 'plane' ?
                             <div className='flex-3-blocks'>
                                 {_carDiv(carTextClicked, setCarTextClicked, { width: "15%" })}
-                                {LoadingImage("images/green-heart", "flexed-separator", null, null, "green-heart")}
+                                {LoadingImage("images/green-heart2", "flexed-separator", null, null, "green-heart2")}
                                 {_planeDiv(planeTextClicked, setPlaneTextClicked, { width: "60%" })}
-                                {LoadingImage("images/green-heart", "flexed-separator", null, null, "green-heart")}
+                                {LoadingImage("images/green-heart2", "flexed-separator", null, null, "green-heart2")}
                                 {_trainDiv(trainTextClicked, setTrainTextClicked, { width: "15%" })}
                             </div>
                             : lastClicked === 'train' ?
                                 <div className='flex-3-blocks'>
                                     {_carDiv(carTextClicked, setCarTextClicked, { width: "15%" })}
-                                    {LoadingImage("images/green-heart", "flexed-separator", null, null, "green-heart")}
+                                    {LoadingImage("images/green-heart2", "flexed-separator", null, null, "green-heart2")}
                                     {_planeDiv(planeTextClicked, setPlaneTextClicked, { width: "15%" })}
-                                    {LoadingImage("images/green-heart", "flexed-separator", null, null, "green-heart")}
+                                    {LoadingImage("images/green-heart2", "flexed-separator", null, null, "green-heart2")}
                                     {_trainDiv(trainTextClicked, setTrainTextClicked, { width: "60%" })}
                                 </div>
                                 :
                                 <div className='flex-3-blocks'>
                                     {_carDiv(carTextClicked, setCarTextClicked)}
-                                    {LoadingImage("images/green-heart", "flexed-separator", null, null, "green-heart")}
+                                    {LoadingImage("images/green-heart2", "flexed-separator", null, null, "green-heart2")}
                                     {_planeDiv(planeTextClicked, setPlaneTextClicked)}
-                                    {LoadingImage("images/green-heart", "flexed-separator", null, null, "green-heart")}
+                                    {LoadingImage("images/green-heart2", "flexed-separator", null, null, "green-heart2")}
                                     {_trainDiv(trainTextClicked, setTrainTextClicked)}
                                 </div>
                 }
@@ -339,7 +333,7 @@ function hotel(width) {
                         </a>
                     </div>
 
-                    {LoadingImage("images/green-heart", "heart-separator basic-margin-bottom", null, null, "green-heart")}
+                    {LoadingImage("images/green-heart2", "heart-separator basic-margin-bottom", null, null, "green-heart2")}
 
                     <div className='flex-50-50 basic-margin'>
                         {LoadingImage("images/tente", "flexed-50-50", null, null, "tente")}
@@ -348,7 +342,7 @@ function hotel(width) {
                         </p>
                     </div>
 
-                    {LoadingImage("images/green-heart", "heart-separator basic-margin-bottom", null, null, "green-heart")}
+                    {LoadingImage("images/green-heart2", "heart-separator basic-margin-bottom", null, null, "green-heart2")}
 
                     <h2 style={{ color: eucalyptusGreen }} className='dactyl basic-margin-bottom'>
                         Et si vous en profitiez pour découvrir Roanne ?
@@ -469,7 +463,7 @@ function dressCode(width) {
                         En inspiration totale de votre tenue ou en détail coloré, nous apprécierons un clin d’œil à la palette des couleurs printanières de notre mariage : taupe, vert sauge, vieux rose...
                     </p>
 
-                    {LoadingImage("images/green-heart", "heart-separator basic-margin-updown", null, null, "green-heart")}
+                    {LoadingImage("images/green-heart2", "heart-separator basic-margin-updown", null, null, "green-heart2")}
                 </div>
             </div>
 
@@ -490,7 +484,7 @@ function infoPratiques(width) {
                     <h3 style={{ color: eucalyptusGreen }}>
                         COORDONNÉES DES FUTURS MARIÉS
                     </h3>
-                    <div className='flex-50-50' style={width < 400 ? { columnGap: "1%" } : null}>
+                    <div className='flex-50-50 basic-margin-top' style={width < 400 ? { columnGap: "1%" } : null}>
                         <div className='flexed-50-50'>
                             <strong>Floriane SIMONDET</strong>
                             <p>floriane.simondet@gmail.com</p>
@@ -502,7 +496,7 @@ function infoPratiques(width) {
                     </div>
                 </div>
 
-                {LoadingImage("images/green-heart", "heart-separator basic-margin-updown", null, null, "green-heart")}
+                {LoadingImage("images/green-heart2", "heart-separator basic-margin-updown", null, null, "green-heart2")}
 
                 <div className='basic-padding-top basic-padding-leftright'>
                     <h3 style={{ color: eucalyptusGreen }}>
@@ -533,7 +527,7 @@ function infoPratiques(width) {
                     </div>
                 </div>
 
-                {LoadingImage("images/green-heart", "heart-separator basic-margin-updown", null, null, "green-heart")}
+                {LoadingImage("images/green-heart2", "heart-separator basic-margin-updown", null, null, "green-heart2")}
 
                 <div className='basic-padding-top basic-padding-leftright'>
                     <h3 style={{ color: eucalyptusGreen }}>
@@ -563,6 +557,19 @@ function photos() {
                 <div className='basic-padding-updown'>
                     <h3 style={{ color: eucalyptusGreen }}>
                         PARTAGE DE PHOTOS
+                    </h3>
+                    <p>
+                        Partagez avec nous vos photos et vidéos du jour J avec l'application Celebrate:
+                    </p>
+                    {LoadingImage("images/qrcode-photos", "event-image-small hovered basic-margin-updown", null, () => window.open('https://get.celebrate.app/KvckRM4JJgk33AYK6'), "qrcode-photos")}
+                    <p> Le code pour accéder à l'album participatif du mariage est <strong> WMYV3LEA </strong></p>
+                </div>
+
+                {LoadingImage("images/green-heart2", "heart-separator basic-margin-updown", null, null, "green-heart2")}
+
+                <div className='basic-padding-updown'>
+                    <h3 style={{ color: eucalyptusGreen }}>
+                        LES PHOTOS DU PHOTOGRAPHE
                     </h3>
                     <p>
                         Section à venir
