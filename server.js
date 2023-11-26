@@ -3,13 +3,18 @@ const express = require('express')
 const path = require("path");
 const app = express()
 
+// Monkey-patch real fs module, so all I/O uses graceful FS.
+var fs = require('fs')
+var gracefulFs = require('graceful-fs')
+gracefulFs.gracefulify(fs)
+
 // #############################################################################
 // This configures static hosting for files in /public that have the extensions
 // listed in the array.
 var options = {
   dotfiles: 'ignore',
   etag: false,
-  extensions: ['htm', 'html','css','js','ico','jpg','jpeg','png','svg'],
+  extensions: ['htm', 'html', 'css', 'js', 'ico', 'jpg', 'jpeg', 'png', 'svg'],
   index: ['index.html'],
   maxAge: '1m',
   redirect: false
