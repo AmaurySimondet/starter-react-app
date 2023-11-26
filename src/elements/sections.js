@@ -558,6 +558,7 @@ function photos() {
                     <h3 style={{ color: eucalyptusGreen }}>
                         PARTAGE DE PHOTOS
                     </h3>
+
                     <p>
                         Partagez avec nous vos photos et vidéos du jour J avec l'application Celebrate:
                     </p>
