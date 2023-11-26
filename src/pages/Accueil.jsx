@@ -43,6 +43,7 @@ function Accueil() {
         });
     })
 
+
     // scroll to top
     useEffect(() => {
         window.addEventListener("scroll", () => {
