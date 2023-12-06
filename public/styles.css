@@ -213,6 +213,11 @@ li {
     flex-grow: 1;
 }
 
+.flexed-50-50-responsive {
+    width: 50%;
+    flex-grow: 1;
+}
+
 .flex-3-blocks {
     display: flex;
     flex-wrap: wrap;
@@ -312,7 +317,7 @@ li {
     }
 
     .heighted {
-        height: 400px;
+        height: 500px;
     }
 
     .white-page {
@@ -336,15 +341,15 @@ li {
 /* SMALL SCREEN */
 @media screen and (max-width: 800px) {
     h1 {
-        font-size: 9vw;
+        font-size: 10vw;
     }
 
     h2 {
-        font-size: 6vw;
+        font-size: 7vw;
     }
 
     h3 {
-        font-size: 4vw;
+        font-size: 5vw;
     }
 
 
@@ -352,11 +357,16 @@ li {
     strong,
     i,
     a {
-        font-size: 2.5vw;
+        font-size: 4vw;
     }
 
     .heighted {
-        height: 400px;
+        height: 500px;
+    }
+
+    .flexed-50-50-responsive {
+        width: 100%;
+        flex-grow: 1;
     }
 
 }
@@ -383,7 +393,12 @@ li {
     }
 
     .heighted {
-        height: 400px;
+        height: 500px;
+    }
+
+    .flexed-50-50-responsive {
+        width: 100%;
+        flex-grow: 1;
     }
 
 }

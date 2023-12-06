@@ -383,7 +383,7 @@ function reponse(adminMdpOk) {
                 {
                     adminMdpOk ?
                         <div className='basic-padding-updown'>
-                            <p>Cliquez ci-dessous pour compléter le formulaire de réponse :</p>
+                            <p><i>Cliquez ci-dessous pour compléter le formulaire de réponse :</i> </p>
                             <a href="https://forms.gle/bXF6xAeHF97PzTo99" style={{ color: eucalyptusGreen }} >
                                 <h2 className='dactyl transition hovered'> Google Form </h2>
                             </a>
@@ -460,7 +460,7 @@ function dressCode(width) {
                         Les shorts, moins.
                     </p>
                     <p>
-                        En inspiration totale de votre tenue ou en détail coloré, nous apprécierons un clin d’œil à la palette des couleurs printanières de notre mariage : taupe, vert sauge, vieux rose...
+                        En inspiration totale de votre tenue ou en détail coloré, nous apprécierons un clin d’œil à la palette des couleurs printanières de notre mariage : taupe, vert sauge, bois de rose...
                     </p>
 
                     {LoadingImage("images/green-heart2", "heart-separator basic-margin-updown", null, null, "green-heart2")}
@@ -485,11 +485,11 @@ function infoPratiques(width) {
                         COORDONNÉES DES FUTURS MARIÉS
                     </h3>
                     <div className='flex-50-50 basic-margin-top' style={width < 400 ? { columnGap: "1%" } : null}>
-                        <div className='flexed-50-50'>
+                        <div className='flexed-50-50-responsive'>
                             <strong>Floriane SIMONDET</strong>
                             <p>floriane.simondet@gmail.com</p>
                         </div>
-                        <div className='flexed-50-50'>
+                        <div className='flexed-50-50-responsive'>
                             <strong>Antoine LEOST</strong>
                             <p>leost.antoine@gmail.com</p>
                         </div>
@@ -506,21 +506,21 @@ function infoPratiques(width) {
                         Pour la planification de surprises, un covoiturage ou la récolte d'informations complémentaires, vous pouvez contacter nos témoins.
                     </p>
                     <div className='flex-50-50' style={width < 400 ? { columnGap: "1%" } : null}>
-                        <div className='flexed-50-50'>
+                        <div className='flexed-50-50-responsive'>
                             <strong>Emeline SIMONDET</strong>
                             <p>emeline.s@ntymail.com</p>
                         </div>
-                        <div className='flexed-50-50'>
+                        <div className='flexed-50-50-responsive'>
                             <strong>Rémi DODIER</strong>
                             <p>dodier.remi@gmail.com</p>
                         </div>
                     </div>
                     <div className='flex-50-50' style={width < 400 ? { columnGap: "1%" } : null}>
-                        <div className='flexed-50-50'>
+                        <div className='flexed-50-50-responsive'>
                             <strong>Alexandra SCLAUNICK</strong>
                             <p>sclaunicka@gmail.com</p>
                         </div>
-                        <div className='flexed-50-50'>
+                        <div className='flexed-50-50-responsive'>
                             <strong>Alexandre MONACO</strong>
                             <p>alexandremonaco@hotmail.fr</p>
                         </div>
@@ -535,6 +535,8 @@ function infoPratiques(width) {
                     </h3>
                     <p>Nous n'avons pas créé de liste de mariage.</p>
                     <p style={{ marginBottom: 0 }}>En revanche, si vous souhaitez nous faire un cadeau, vous pouvez participer à la cagnotte qui nous aidera à partir en voyages de noces :</p>
+                    <br />
+                    <i>Vous pouvez cliquer sur le qr-code ou le scanner pour ouvrir le site de la cagnotte:</i>
                     {LoadingImage("images/cagnotte", "event-image hovered basic-margin-updown", null, () => window.open('https://app.lyf.eu/pot/fr/b9b5ab65-b5b1-4c86-8957-0ae7906d954f'), "cagnotte")}
                     <p>Notre rêve : partir en Islande voir les aurores boréales !</p>
                 </div>
@@ -562,6 +564,7 @@ function photos() {
                     <p>
                         Partagez avec nous vos photos et vidéos du jour J avec l'application Celebrate:
                     </p>
+                    <p><i>Vous pouvez cliquer sur le qr-code ou le scanner pour télécharger Celebrate:</i></p>
                     {LoadingImage("images/qrcode-photos", "event-image-small hovered basic-margin-updown", null, () => window.open('https://get.celebrate.app/KvckRM4JJgk33AYK6'), "qrcode-photos")}
                     <p> Le code pour accéder à l'album participatif du mariage est <strong> WMYV3LEA </strong></p>
                 </div>
