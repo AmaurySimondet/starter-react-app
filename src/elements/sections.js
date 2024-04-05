@@ -537,7 +537,7 @@ function infoPratiques(width) {
                     <p style={{ marginBottom: 0 }}>En revanche, si vous souhaitez nous faire un cadeau, vous pouvez participer à la cagnotte qui nous aidera à partir en voyages de noces :</p>
                     <br />
                     <i>Vous pouvez cliquer sur le qr-code ou le scanner pour ouvrir le site de la cagnotte:</i>
-                    {LoadingImage("images/cagnotte", "event-image hovered basic-margin-updown", null, () => window.open('https://app.lyf.eu/pot/fr/b9b5ab65-b5b1-4c86-8957-0ae7906d954f'), "cagnotte")}
+                    {LoadingImage("images/cagnotte", "event-image hovered basic-margin-updown", null, () => window.open('https://app.lyf.eu/pot/b25fa030-9006-45ca-8c7f-1d2f89d8f619?lang=fr'), "cagnotte")}
                     <p>Notre rêve : partir en Islande voir les aurores boréales !</p>
                 </div>
             </div>
