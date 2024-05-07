@@ -23,6 +23,15 @@ function titles(timeRemaining, width) {
         }>
 
             <div className='basic-margin-updown' style={width < 400 ? { marginTop: "40%" } : {}}>
+
+                <div style={{ textAlign: "center", backgroundColor: "red", color: "white", padding: "10px" }}>
+                    <p>
+                        ATTENTION : L'hébergeur du site stoppe ses services et le site ne sera alors peut être plus accessible à partir du 10 mai 2024.
+                        <br />
+                        Restez en contact directement avec les mariés pour toute information.
+                    </p>
+                </div>
+
                 {LoadingImage("images/branche2", "branche", null, null, "branche")}
 
                 <div>
