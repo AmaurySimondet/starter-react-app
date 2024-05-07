@@ -2,6 +2,28 @@ import { eucalyptusGreen, colorLightOrange, colorOrange, desertRose, japaneseGar
 import { div5050, LoadingImage } from './general';
 import { NavigationButtons } from './navbuttons';
 
+function _displayDiv() {
+    // Function to check if the URL contains "cyclic"
+    const shouldDisplayDiv = () => {
+        return window.location.href.includes("cyclic");
+    };
+
+    // Render the div only if the URL contains "cyclic"
+    return (
+        <div>
+            {shouldDisplayDiv() && (
+                <div style={{ textAlign: "center", backgroundColor: "red", color: "white", padding: "10px" }}>
+                    <p>
+                        ATTENTION : L'hébergeur du site stoppe ses services et ce site ne sera alors peut être plus accessible à partir du 10 mai 2024.
+                        <br />
+                        Le nouveau site est https://mariagedeflorianeetantoine.vercel.app/
+                    </p>
+                </div>
+            )}
+        </div>
+    );
+}
+
 function titles(timeRemaining, width) {
     return (
         <div id="titles" className='basic-page' style={
@@ -24,13 +46,7 @@ function titles(timeRemaining, width) {
 
             <div className='basic-margin-updown' style={width < 400 ? { marginTop: "40%" } : {}}>
 
-                <div style={{ textAlign: "center", backgroundColor: "red", color: "white", padding: "10px" }}>
-                    <p>
-                        ATTENTION : L'hébergeur du site stoppe ses services et le site ne sera alors peut être plus accessible à partir du 10 mai 2024.
-                        <br />
-                        Restez en contact directement avec les mariés pour toute information.
-                    </p>
-                </div>
+                {_displayDiv()}
 
                 {LoadingImage("images/branche2", "branche", null, null, "branche")}
 
