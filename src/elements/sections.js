@@ -84,9 +84,9 @@ function programme(width, adminMdpOk) {
                 {adminMdpOk ?
                     <div className='basic-margin-top'>
                         {div5050("16h00", "Cérémonie d'engagement", "ceremonie.gif", false, { width: "85%" })}
-                        {div5050("18h15", "Vin d'honneur", "apero.webp", true)}
-                        {div5050("21h00", "Dîner", "diner.webp", false, { width: "45%" })}
-                        {div5050("23h55", "Ouverture du bal", "soiree.webp", true)}
+                        {div5050("18h00", "Vin d'honneur", "apero.webp", true)}
+                        {div5050("20h30", "Dîner", "diner.webp", false, { width: "45%" })}
+                        {div5050("00h30", "Ouverture du bal", "soiree.webp", true)}
 
                     </div>
                     :
@@ -190,7 +190,7 @@ function _trainDiv(trainTextClicked, setTrainTextClicked, style = {}) {
                 </p>
                 <p>
                     Les applis de chauffeurs ne fonctionnent pas sur Roanne. Vous pouvez contacter un taxi (tel que Robert DUFOURT
-                    04 77 69 60 00
+                    06 09 37 17 65
                     taxidufourt@wanadoo.fr)
                     ou organiser un covoiturage avec nos témoins !
                 </p>
