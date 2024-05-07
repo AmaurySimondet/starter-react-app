@@ -10,19 +10,20 @@ function _displayDiv() {
 
     // Render the div only if the URL contains "cyclic"
     return (
-        <div>
+        <div style={{ zIndex: 1000, position: "fixed", width: "100%", top: "8%" }}>
             {shouldDisplayDiv() && (
                 <div style={{ textAlign: "center", backgroundColor: "red", color: "white", padding: "10px" }}>
                     <p>
-                        ATTENTION : L'hébergeur du site stoppe ses services et ce site ne sera alors peut être plus accessible à partir du 10 mai 2024.
+                        ATTENTION : L'hébergeur de ce site stoppe ses services et ce site ne sera alors peut être plus accessible à partir du 10 mai 2024.
                         <br />
-                        Le nouveau site est https://mariagedeflorianeetantoine.vercel.app/
+                        Le nouveau site est disponible <a href="https://mariagedeflorianeetantoine.vercel.app/" style={{ color: "white", textDecoration: "underline", fontWeight: "bold" }}>ici</a>
                     </p>
                 </div>
             )}
         </div>
     );
 }
+
 
 function titles(timeRemaining, width) {
     return (
