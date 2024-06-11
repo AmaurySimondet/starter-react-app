@@ -592,7 +592,7 @@ function photos() {
                     </p>
                     <p><i>Vous pouvez cliquer sur le qr-code ou le scanner pour télécharger Celebrate:</i></p>
                     {LoadingImage("images/qrcode-photos", "event-image-small hovered basic-margin-updown", null, () => window.open('https://get.celebrate.app/KvckRM4JJgk33AYK6'), "qrcode-photos")}
-                    <p> Le code pour accéder à l'album participatif du mariage est <strong> WMYV3LEA </strong></p>
+                    <p> Le code pour accéder à l'album participatif du mariage est <strong> WYMV3LEA </strong></p>
                 </div>
 
                 {LoadingImage("images/green-heart2", "heart-separator basic-margin-updown", null, null, "green-heart2")}
