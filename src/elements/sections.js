@@ -588,7 +588,7 @@ function photos() {
                     </h3>
 
                     <p>
-                        Partagez avec nous vos photos et vidéos du jour J avec l'application Celebrate:
+                        Retrouvez et partagez avec nous vos photos et vidéos du jour J avec l'application Celebrate:
                     </p>
                     <p><i>Vous pouvez cliquer sur le qr-code ou le scanner pour télécharger Celebrate:</i></p>
                     {LoadingImage("images/qrcode-photos", "event-image-small hovered basic-margin-updown", null, () => window.open('https://get.celebrate.app/KvckRM4JJgk33AYK6'), "qrcode-photos")}
@@ -601,9 +601,17 @@ function photos() {
                     <h3 style={{ color: eucalyptusGreen }}>
                         LES PHOTOS DU PHOTOGRAPHE
                     </h3>
+
+                    {/* bouton pour ouvrir la galerie */}
                     <p>
-                        Section à venir
+                        Code d'accès: <strong>NA6B</strong>
                     </p>
+                    <p>
+                        Vous pouvez retrouver les photos du photographe professionnel sur la galerie en ligne :
+                    </p>
+                    <a href="https://moovinart.lumys.photo/fa08062024" style={{ color: colorOrange }} className='dactyl flexed-50-50 transition hovered'>
+                        <h2> Galerie </h2>
+                    </a>
                 </div>
             </div>
         </div>
